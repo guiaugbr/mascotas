@@ -49,10 +49,37 @@
       <ion-label position="floating" color="primary">Evento</ion-label>
       <ion-input type="text" formControlName="evento"></ion-input>
     </ion-item>
-    <ion-item>
-      <ion-label position="floating" color="primary">Especialidad</ion-label>
-      <ion-input type="text" formControlName="especialidad"></ion-input>
-    </ion-item>
+    <ion-list>
+      <ion-radio-group formControlName="especialidad">
+        <ion-list-header>
+          <ion-label>Especialidad</ion-label>
+        </ion-list-header>
+        <ion-item>
+          <ion-label>Peluquerías</ion-label>
+          <ion-radio slot="start" value="peluquerias" checked></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Veterinarias</ion-label>
+          <ion-radio slot="start" value="Veterinarias"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Adopción</ion-label>
+          <ion-radio slot="start" value="adopcion"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Adiestramiento</ion-label>
+          <ion-radio slot="start" value="adiestramiento"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Residencias</ion-label>
+          <ion-radio slot="start" value="residencias"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Tiendas</ion-label>
+          <ion-radio slot="start" value="tiendas"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-list>
     <ion-item>
       <ion-label position="floating" color="primary">Email</ion-label>
       <ion-input type="text" formControlName="email"></ion-input>
