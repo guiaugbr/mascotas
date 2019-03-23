@@ -5,15 +5,15 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { PeluqueriasListPage } from './peluquerias-list.page';
-import { PeluqueriasListResolver } from './peluquerias-list.resolver';
+import { ListPage } from './list.page';
+import { ListResolver } from './list.resolver';
 
 const routes: Routes = [
   {
     path: '',
-    component: PeluqueriasListPage,
+    component: ListPage,
     resolve: {
-      data: PeluqueriasListResolver
+      data: ListResolver
     }
   }
 ];
@@ -26,9 +26,9 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [PeluqueriasListPage],
+  declarations: [ListPage],
   providers: [
-    PeluqueriasListResolver
+    ListResolver
   ]
 })
-export class PeluqueriasListPageModule {}
+export class ListPageModule {}

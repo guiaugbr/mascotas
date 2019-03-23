@@ -4,11 +4,11 @@ import { LoadingController } from '@ionic/angular';
 import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'peluquerias-list',
-  templateUrl: './peluquerias-list.page.html',
-  styleUrls: ['./peluquerias-list.page.scss'],
+  selector: 'list',
+  templateUrl: './list.page.html',
+  styleUrls: ['./list.page.scss'],
 })
-export class PeluqueriasListPage implements OnInit {
+export class ListPage implements OnInit {
 
   items: Array<any>;
 
@@ -33,7 +33,7 @@ export class PeluqueriasListPage implements OnInit {
 
   async getData() {
     const loading = await this.loadingCtrl.create({
-      message: 'Please wait...'
+      message: 'Espere un momento...'
     });
     this.presentLoading(loading);
 

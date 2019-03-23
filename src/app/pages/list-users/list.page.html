@@ -1,21 +1,16 @@
 <ion-header>
   <ion-toolbar color="primary">
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="home-switch"></ion-back-button>
+      <ion-back-button defaultHref="home"></ion-back-button>
     </ion-buttons>
-    <ion-buttons slot="end">
-      <ion-button [routerLink]="['/new-empresa']">
-        <ion-icon slot="icon-only" name="add"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-    <ion-title>Listado de Peluquerías</ion-title>
+    <ion-title>Listado</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content *ngIf="items" class="list-mini-content" padding>
   <!-- Slide -->
   <ion-slides [options]="sliderConfig">
-    <ion-slide *ngFor="let item of items" [routerLink]="['/details', item.payload.doc.id]">
+    <ion-slide *ngFor="let item of items" [routerLink]="['/details-users', item.payload.doc.id]">
       <!--div *ngIf="item.payload.doc.data().especialidad"-->
       <ion-card>
         <ion-card-header>
@@ -31,20 +26,8 @@
       <!--/div-->
     </ion-slide>
   </ion-slides>
-  <!-- List -->
-  <!--div *ngIf="items.length > 0" class="list-mini">
-    <ion-list>
-      <ion-item *ngFor="let item of items" [routerLink]="['/details', item.payload.doc.id]">
-        <ion-thumbnail slot="start">
-          <img [src]="item.payload.doc.data().image">
-        </ion-thumbnail>
-        <ion-label>{{item.payload.doc.data().title}}</ion-label>
-        <ion-button fill="clear" slot="end">Details</ion-button>
-      </ion-item>
-    </ion-list>
-  </div-->
   <div *ngIf="items.length == 0" class="empty-list">
-    Por favor cree su primera peluquería.
+    Por favor cree el primer ítem.
   </div>
 </ion-content>
 <ion-footer (click)="logout()">
