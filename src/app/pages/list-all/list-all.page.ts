@@ -1,14 +1,14 @@
-import {Component, OnInit} from '@angular/core';
-import {AuthService} from '../../services/auth.service';
-import {LoadingController} from '@ionic/angular';
-import {Router, ActivatedRoute} from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../../services/auth.service';
+import { LoadingController } from '@ionic/angular';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.page.html',
-  styleUrls: ['./home.page.scss'],
+  selector: 'list-all',
+  templateUrl: './list-all.page.html',
+  styleUrls: ['./list-all.page.scss'],
 })
-export class HomePage implements OnInit {
+export class ListAllPage implements OnInit {
 
   items: Array<any>;
 
@@ -17,8 +17,7 @@ export class HomePage implements OnInit {
     private authService: AuthService,
     private router: Router,
     private route: ActivatedRoute
-  ) {
-  }
+  ) { }
 
   ngOnInit() {
     if (this.route && this.route.data) {
@@ -26,7 +25,7 @@ export class HomePage implements OnInit {
     }
   }
 
-  async getData() {
+  async getData(){
     const loading = await this.loadingCtrl.create({
       message: 'Espere un momento...'
     });
@@ -36,21 +35,21 @@ export class HomePage implements OnInit {
       routeData['data'].subscribe(data => {
         loading.dismiss();
         this.items = data;
-      });
-    });
+      })
+    })
   }
 
   async presentLoading(loading) {
     return await loading.present();
   }
 
-  logout() {
+  logout(){
     this.authService.doLogout()
-      .then(res => {
-        this.router.navigate(['/login']);
-      }, err => {
-        console.log(err);
-      });
+    .then(res => {
+      this.router.navigate(["/login"]);
+    }, err => {
+      console.log(err);
+    })
   }
 
 }

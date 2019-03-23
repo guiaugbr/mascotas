@@ -4,11 +4,11 @@ import { LoadingController } from '@ionic/angular';
 import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-home-switch',
-  templateUrl: './home-switch.page.html',
-  styleUrls: ['./home-switch.page.scss'],
+  selector: 'categories',
+  templateUrl: './categories.page.html',
+  styleUrls: ['./categories.page.scss'],
 })
-export class HomeSwitchPage implements OnInit {
+export class CategoriesPage implements OnInit {
 
   items: Array<any>;
 
@@ -27,7 +27,7 @@ export class HomeSwitchPage implements OnInit {
 
   async getData(){
     const loading = await this.loadingCtrl.create({
-      message: 'Please wait...'
+      message: 'Espere un momento...'
     });
     this.presentLoading(loading);
 

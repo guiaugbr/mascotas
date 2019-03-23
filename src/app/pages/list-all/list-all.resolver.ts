@@ -3,11 +3,11 @@ import { Resolve } from '@angular/router';
 import { FirebaseService } from '../../services/firebase.service';
 
 @Injectable()
-export class HomeResolver implements Resolve<any> {
+export class ListAllResolver implements Resolve<any> {
 
   constructor(private firebaseService: FirebaseService) {}
 
   resolve() {
-    return this.firebaseService.getEmpresasFilterBy('peluqueria');
+    return this.firebaseService.getEmpresas();
   }
 }

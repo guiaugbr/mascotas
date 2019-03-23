@@ -33,7 +33,7 @@ export class ListPage implements OnInit {
 
   async getData() {
     const loading = await this.loadingCtrl.create({
-      message: 'Please wait...'
+      message: 'Espere un momento...'
     });
     this.presentLoading(loading);
 

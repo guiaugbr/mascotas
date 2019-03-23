@@ -5,15 +5,15 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { HomeSwitchPage } from './home-switch.page';
-import { HomeSwitchResolver } from './home-switch.resolver';
+import { CategoriesPage } from './categories.page';
+import { CategoriesResolver } from './categories.resolver';
 
 const routes: Routes = [
   {
     path: '',
-    component: HomeSwitchPage,
+    component: CategoriesPage,
     resolve: {
-      data: HomeSwitchResolver
+      data: CategoriesResolver
     }
   }
 ];
@@ -26,9 +26,9 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [HomeSwitchPage],
+  declarations: [CategoriesPage],
   providers: [
-    HomeSwitchResolver
+    CategoriesResolver
   ]
 })
-export class HomeSwitchPageModule {}
+export class CategoriesPageModule {}
