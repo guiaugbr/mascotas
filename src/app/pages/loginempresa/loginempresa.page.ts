@@ -4,11 +4,11 @@ import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.page.html',
-  styleUrls: ['./login.page.scss'],
+  selector: 'app-loginempresa',
+  templateUrl: './loginempresa.page.html',
+  styleUrls: ['./loginempresa.page.scss'],
 })
-export class LoginPage implements OnInit {
+export class LoginempresaPage implements OnInit {
 
   validations_form: FormGroup;
   errorMessage: string = '';
@@ -46,7 +46,7 @@ export class LoginPage implements OnInit {
   tryLogin(value){
     this.authService.doLogin(value)
     .then(res => {
-      this.router.navigate(["/home-app"]);
+      this.router.navigate(["/categories"]);
     }, err => {
       this.errorMessage = err.message;
       console.log(err)
