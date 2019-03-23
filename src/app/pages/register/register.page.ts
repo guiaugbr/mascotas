@@ -22,7 +22,11 @@ export class RegisterPage implements OnInit {
    'password': [
      { type: 'required', message: 'Password is required.' },
      { type: 'minlength', message: 'Password must be at least 5 characters long.' }
-   ]
+   ],
+    'nombre': [
+      { type: 'required', message: 'Nombre is required.' },
+      { type: 'minlength', message: 'Nombre must be at least 5 characters long.' }
+    ]
   };
 
   constructor(
@@ -39,6 +43,10 @@ export class RegisterPage implements OnInit {
       ])),
       password: new FormControl('', Validators.compose([
         Validators.minLength(5),
+        Validators.required
+      ])),
+      nombre: new FormControl('', Validators.compose([
+        Validators.minLength(3),
         Validators.required
       ])),
     });

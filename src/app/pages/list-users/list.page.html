@@ -1,9 +1,16 @@
 <ion-header>
-  <ion-toolbar color="primary">
+  <ion-toolbar class="logo">
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="home"></ion-back-button>
+      <ion-back-button defaultHref="home-app"></ion-back-button>
     </ion-buttons>
-    <ion-title>Listado</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-icon routerLink="/login" slot="end" size="large" name="contact"></ion-icon>
+    <ion-title>
+      <img src="../../../assets/imgs/fondo.png" alt="">
+      <h3 text-center>Empresas</h3>
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 

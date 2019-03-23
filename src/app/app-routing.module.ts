@@ -17,7 +17,6 @@ const routes: Routes = [
   { path: 'prelogin', loadChildren: './pages/prelogin/prelogin.module#PreloginPageModule' },
   { path: 'regisempresa', loadChildren: './pages/regisempresa/regisempresa.module#RegisempresaPageModule' },
   { path: 'loginempresa', loadChildren: './pages/loginempresa/loginempresa.module#LoginempresaPageModule' },
-  { path: 'list-client', loadChildren: './pages/list-client/list-client.module#ListClientPageModule' },
 
   // { path: 'new-empresa-modal', loadChildren: './pages/new-empresa-modal/new-empresa-modal.module#NewEmpresaModalPageModule' },
 ];

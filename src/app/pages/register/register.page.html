@@ -24,6 +24,10 @@
       <ion-label position="floating" color="primary">Password</ion-label>
       <ion-input type="password" formControlName="password"></ion-input>
     </ion-item>
+    <ion-item>
+      <ion-label position="floating" color="primary">NOmbre</ion-label>
+      <ion-input type="text" formControlName="nombre"></ion-input>
+    </ion-item>
     <div class="validation-errors">
       <ng-container *ngFor="let validation of validation_messages.password">
         <div class="error-message" *ngIf="validations_form.get('password').hasError(validation.type) && (validations_form.get('password').dirty || validations_form.get('password').touched)">
