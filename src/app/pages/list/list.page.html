@@ -31,20 +31,8 @@
       <!--/div-->
     </ion-slide>
   </ion-slides>
-  <!-- List -->
-  <!--div *ngIf="items.length > 0" class="list-mini">
-    <ion-list>
-      <ion-item *ngFor="let item of items" [routerLink]="['/details', item.payload.doc.id]">
-        <ion-thumbnail slot="start">
-          <img [src]="item.payload.doc.data().image">
-        </ion-thumbnail>
-        <ion-label>{{item.payload.doc.data().title}}</ion-label>
-        <ion-button fill="clear" slot="end">Details</ion-button>
-      </ion-item>
-    </ion-list>
-  </div-->
   <div *ngIf="items.length == 0" class="empty-list">
-    Por favor cree su primera peluquería.
+    Por favor cree el primer ítem.
   </div>
 </ion-content>
 <ion-footer (click)="logout()">
