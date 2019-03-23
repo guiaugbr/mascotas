@@ -27,7 +27,7 @@
         </ion-card>
       </ion-col>
       <ion-col size="6">
-        <ion-card routerLink="/veterinarios" class="welcome-card">
+        <ion-card [routerLink]="['/list-users', 'veterinario']" class="welcome-card">
           <ion-img src="../../assets/imgs/MascotaActual-veterinaria.jpg"></ion-img>
           <ion-card-header>
             <ion-card-title text-center class="titulo"><p>Clinicas</p></ion-card-title>
@@ -35,7 +35,7 @@
         </ion-card>
       </ion-col>
       <ion-col size="6">
-        <ion-card routerLink="/eventos" class="welcome-card">
+        <ion-card [routerLink]="['/list-users', 'evento']" class="welcome-card">
           <ion-img src="../../assets/imgs/MascotaAnimal-eventos.jpg"></ion-img>
           <ion-card-header>
             <ion-card-title text-center class="titulo"><p>Eventos</p></ion-card-title>
@@ -43,7 +43,7 @@
         </ion-card>
       </ion-col>
       <ion-col size="6">
-        <ion-card routerLink="/tienda" class="welcome-card">
+        <ion-card [routerLink]="['/list-users', 'tienda']" class="welcome-card">
           <ion-img src="../../assets/imgs/MascotaAnimal-Tienda.jpg"></ion-img>
           <ion-card-header>
             <ion-card-title text-center class="titulo"><p>Tiendas</p></ion-card-title>
@@ -51,7 +51,7 @@
         </ion-card>
       </ion-col>
       <ion-col size="6">
-        <ion-card routerLink="/adiestramiento" class="welcome-card">
+        <ion-card [routerLink]="['/list-users', 'adiestramiento']" class="welcome-card">
           <ion-img src="../../assets/imgs/MascotaActual-Adiestradores.jpg"></ion-img>
           <ion-card-header>
             <ion-card-title text-center class="titulo"><p>Adiestramiento</p></ion-card-title>
@@ -59,7 +59,7 @@
         </ion-card>
       </ion-col>
       <ion-col size="6">
-        <ion-card routerLink="/residencias" class="welcome-card">
+        <ion-card [routerLink]="['/list-users', 'residencia']" class="welcome-card">
           <ion-img src="../../assets/imgs/MascotaAnimal-Residencias.jpg"></ion-img>
           <ion-card-header>
             <ion-card-title text-center class="titulo"><p>Residencias</p></ion-card-title>

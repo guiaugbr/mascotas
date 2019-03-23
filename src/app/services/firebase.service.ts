@@ -32,7 +32,10 @@ export class FirebaseService {
     return new Promise<any>((resolve, reject) => {
       this.afAuth.user.subscribe(currentUser => {
         if (currentUser) {
-          this.snapshotChangesSubscription = this.afs.collection('mascota').doc(currentUser.uid).collection('empresas', ref => ref.where('especialidad', '==', especialidad)).snapshotChanges();
+          this.snapshotChangesSubscription = this.afs.collection('mascota')
+            .doc(currentUser.uid)
+            .collection('empresas', ref => ref.where('especialidad', '==', especialidad))
+            .snapshotChanges();
           resolve(this.snapshotChangesSubscription);
         }
       });

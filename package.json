@@ -60,7 +60,7 @@
     "cordova": {
         "plugins": {
             "cordova-plugin-telerik-imagepicker": {
-                "PHOTO_LIBRARY_USAGE_DESCRIPTION": "Pick a photo"
+                "PHOTO_LIBRARY_USAGE_DESCRIPTION": "Inserte una imagen"
             },
             "cordova-plugin-device": {},
             "cordova-plugin-ionic-keyboard": {},
