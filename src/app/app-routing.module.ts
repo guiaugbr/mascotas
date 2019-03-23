@@ -10,6 +10,7 @@ const routes: Routes = [
   { path: 'home-switch', loadChildren: './home-switch/home-switch.module#HomeSwitchPageModule' },
   { path: 'home-app', loadChildren: './home-app/home.module#HomePageModule' },
   { path: 'new-empresa', loadChildren: './new-empresa/new-empresa.module#NewEmpresaPageModule' },
+  { path: 'peluquerias-list', loadChildren: './peluquerias-list/peluquerias-list.module#PeluqueriasListPageModule' },
   // { path: 'new-empresa-modal', loadChildren: './new-empresa-modal/new-empresa-modal.module#NewEmpresaModalPageModule' },
 ];
 

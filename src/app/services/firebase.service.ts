@@ -27,6 +27,17 @@ export class FirebaseService {
     })
   }
 
+  getEmpresasFilterBy(especialidad){
+    return new Promise<any>((resolve, reject) => {
+      this.afAuth.user.subscribe(currentUser => {
+        if(currentUser){
+          this.snapshotChangesSubscription = this.afs.collection('mascota').doc(currentUser.uid).collection('empresas', ref => ref.where('especialidad', '==', 'peluqueria')).snapshotChanges();
+          resolve(this.snapshotChangesSubscription);
+        }
+      })
+    })
+  }
+
   getEmpresa(empresaId){
     return new Promise<any>((resolve, reject) => {
       this.afAuth.user.subscribe(currentUser => {
