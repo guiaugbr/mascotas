@@ -12,6 +12,12 @@ export class PeluqueriasListPage implements OnInit {
 
   items: Array<any>;
 
+  sliderConfig = {
+    slidesPerView: 1.6,
+    spaceBetween: 10,
+    centeredSlides: true
+  };
+
   constructor(
     public loadingCtrl: LoadingController,
     private authService: AuthService,
@@ -25,7 +31,7 @@ export class PeluqueriasListPage implements OnInit {
     }
   }
 
-  async getData(){
+  async getData() {
     const loading = await this.loadingCtrl.create({
       message: 'Please wait...'
     });
@@ -35,21 +41,21 @@ export class PeluqueriasListPage implements OnInit {
       routeData['data'].subscribe(data => {
         loading.dismiss();
         this.items = data;
-      })
-    })
+      });
+    });
   }
 
   async presentLoading(loading) {
     return await loading.present();
   }
 
-  logout(){
+  logout() {
     this.authService.doLogout()
     .then(res => {
-      this.router.navigate(["/login"]);
+      this.router.navigate(['/login']);
     }, err => {
       console.log(err);
-    })
+    });
   }
 
 }
