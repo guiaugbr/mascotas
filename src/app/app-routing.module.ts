@@ -12,7 +12,6 @@ const routes: Routes = [
   { path: 'categories', loadChildren: './pages/categories/categories.module#CategoriesPageModule' },
   { path: 'home-app', loadChildren: './pages/home-app/home.module#HomePageModule' },
   { path: 'new-empresa', loadChildren: './pages/new-empresa/new-empresa.module#NewEmpresaPageModule' },
-  { path: 'peluquerias-list', loadChildren: './pages/peluquerias-list/peluquerias-list.module#PeluqueriasListPageModule' },
   { path: 'prelogin', loadChildren: './pages/prelogin/prelogin.module#PreloginPageModule' },
   { path: 'regisempresa', loadChildren: './pages/regisempresa/regisempresa.module#RegisempresaPageModule' },
   { path: 'loginempresa', loadChildren: './pages/loginempresa/loginempresa.module#LoginempresaPageModule' },
