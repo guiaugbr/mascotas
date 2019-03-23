@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="end">
+      <ion-button [routerLink]="['/home']">
+        <ion-title>Mascotas</ion-title>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+  <div class="empty-list">
+    <ion-row>
+      <ion-col size="6" offset="3">
+        <ion-button [routerLink]="['/home-app']">Home  APP</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="6" offset="3">
+        <ion-button [routerLink]="['/home']">Home CRUD</ion-button>
+      </ion-col>
+    </ion-row>
+  </div>
+</ion-content>
+<ion-footer (click)="logout()">
+  <ion-toolbar color="medium">
+    <ion-title>Log out</ion-title>
+  </ion-toolbar>
+</ion-footer>
