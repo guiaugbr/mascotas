@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../services/auth.service';
+import { AuthService } from '../../services/auth.service';
 import { LoadingController } from '@ionic/angular';
 import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'peluquerias-list',
-  templateUrl: './peluquerias-list.page.html',
-  styleUrls: ['./peluquerias-list.page.scss'],
+  selector: 'app-home',
+  templateUrl: './home.page.html',
+  styleUrls: ['./home.page.scss'],
 })
-export class PeluqueriasListPage implements OnInit {
+export class HomePage implements OnInit {
 
   items: Array<any>;
 
