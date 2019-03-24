@@ -19,27 +19,41 @@ export class FirebaseService {
 
   getEmpresas() {
     return new Promise<any>((resolve, reject) => {
-      this.snapshotChangesSubscription = this.afs.collection('empresas').snapshotChanges();
-      resolve(this.snapshotChangesSubscription);
+      this.afAuth.user.subscribe(currentUser => {
+        if (currentUser) {
+          this.snapshotChangesSubscription = this.afs.collection('mascota').doc(currentUser.uid).collection('empresas').snapshotChanges();
+          resolve(this.snapshotChangesSubscription);
+        }
+      });
     });
   }
 
   getEmpresasFilterBy(especialidad) {
     return new Promise<any>((resolve, reject) => {
-      this.snapshotChangesSubscription = this.afs.collection('empresas', ref => ref.where('especialidad', '==', especialidad))
-        .snapshotChanges();
-      resolve(this.snapshotChangesSubscription);
+      this.afAuth.user.subscribe(currentUser => {
+        if (currentUser) {
+          this.snapshotChangesSubscription = this.afs.collection('mascota')
+            .doc(currentUser.uid)
+            .collection('empresas', ref => ref.where('especialidad', '==', especialidad))
+            .snapshotChanges();
+          resolve(this.snapshotChangesSubscription);
+        }
+      });
     });
   }
 
   getEmpresa(empresaId) {
     return new Promise<any>((resolve, reject) => {
-      this.snapshotChangesSubscription = this.afs.doc<any>('/empresas/' + empresaId).valueChanges()
-        .subscribe(snapshots => {
-          resolve(snapshots);
-        }, err => {
-          reject(err);
-        });
+      this.afAuth.user.subscribe(currentUser => {
+        if (currentUser) {
+          this.snapshotChangesSubscription = this.afs.doc<any>('mascota/' + currentUser.uid + '/empresas/' + empresaId).valueChanges()
+            .subscribe(snapshots => {
+              resolve(snapshots);
+            }, err => {
+              reject(err);
+            });
+        }
+      });
     });
   }
 
@@ -50,7 +64,8 @@ export class FirebaseService {
 
   updateEmpresa(empresaKey, value) {
     return new Promise<any>((resolve, reject) => {
-      this.afs.collection('empresas').doc(empresaKey).set(value)
+      let currentUser = firebase.auth().currentUser;
+      this.afs.collection('mascota').doc(currentUser.uid).collection('empresas').doc(empresaKey).set(value)
         .then(
           res => resolve(res),
           err => reject(err)
@@ -60,7 +75,8 @@ export class FirebaseService {
 
   deleteEmpresa(empresaKey) {
     return new Promise<any>((resolve, reject) => {
-      this.afs.collection('empresas').doc(empresaKey).delete()
+      let currentUser = firebase.auth().currentUser;
+      this.afs.collection('mascota').doc(currentUser.uid).collection('empresas').doc(empresaKey).delete()
         .then(
           res => resolve(res),
           err => reject(err)
@@ -70,7 +86,8 @@ export class FirebaseService {
 
   createEmpresa(value) {
     return new Promise<any>((resolve, reject) => {
-      this.afs.collection('empresas').add({
+      let currentUser = firebase.auth().currentUser;
+      this.afs.collection('mascota').doc(currentUser.uid).collection('empresas').add({
         title: value.title,
         description: value.description,
         direccion: value.direccion,

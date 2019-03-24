@@ -40,7 +40,7 @@ export class NewEmpresaPage implements OnInit {
       telefono: new FormControl('', Validators.required),
       cif: new FormControl('', Validators.required),
       codPostal: new FormControl('', Validators.required),
-      evento: new FormControl('', Validators.required),
+      evento: new FormControl(''),
       especialidad: new FormControl('', Validators.required),
       email: new FormControl('', Validators.required),
       plan: new FormControl('', Validators.required)
