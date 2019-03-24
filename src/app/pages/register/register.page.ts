@@ -20,13 +20,17 @@ export class RegisterPage implements OnInit {
      { type: 'pattern', message: 'Enter a valid email.' }
    ],
    'password': [
-     { type: 'required', message: 'Password is required.' },
-     { type: 'minlength', message: 'Password must be at least 5 characters long.' }
+     { type: 'required', message: 'Contraseña Requerida.' },
+     { type: 'minlength', message: 'La Contraseña debe tener mas de 5 digitos.' }
    ],
-    'nombre': [
-      { type: 'required', message: 'Nombre is required.' },
-      { type: 'minlength', message: 'Nombre must be at least 5 characters long.' }
-    ]
+    'confirmarPassword': [
+      { type: 'required', message: 'Confirmar Contraseña Requerida.' },
+      { type: 'minlength', message: 'la contraseña debe ser igual.' }
+    ],
+    'localidad': [
+      { type: 'required', message: 'Localidad es Requerida.' },
+      { type: 'minlength', message: 'Localidad es Requerida.' }
+    ],
   };
 
   constructor(
@@ -45,7 +49,11 @@ export class RegisterPage implements OnInit {
         Validators.minLength(5),
         Validators.required
       ])),
-      nombre: new FormControl('', Validators.compose([
+      confirmarPassword: new FormControl('', Validators.compose([
+        Validators.minLength(5),
+        Validators.required
+      ])),
+      localidad: new FormControl('', Validators.compose([
         Validators.minLength(3),
         Validators.required
       ])),

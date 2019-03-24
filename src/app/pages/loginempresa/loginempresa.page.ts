@@ -54,6 +54,6 @@ export class LoginempresaPage implements OnInit {
   }
 
   goRegisterPage(){
-    this.router.navigate(["/register"]);
+    this.router.navigate(["/regisempresa"]);
   }
 }
