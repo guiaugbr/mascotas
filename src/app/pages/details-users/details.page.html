@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="home"></ion-back-button>
     </ion-buttons>
-    <ion-title>Detalle</ion-title>
+    <ion-title>Información</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -16,7 +16,7 @@
     </ion-row>
     <ion-row>
       <ion-col size="6" offset="3">
-        <ion-button fill="outline" expand="block" size="small" (click)="openImagePicker()">Cambiar imagen</ion-button>
+        <ion-button fill="outline" expand="block" size="small" (click)="openImagePicker()" class="texto-imagen">Cambiar imagen</ion-button>
       </ion-col>
     </ion-row>
   </div>
@@ -61,6 +61,36 @@
       <ion-label position="floating" color="primary">Plan</ion-label>
       <ion-input type="text" formControlName="plan"></ion-input>
     </ion-item>
+  <div text-center>
+    <ion-button  href="https://wa.me/+34644790417">Pedir Cita</ion-button>
+  </div>
+
+
   </form>
 
 </ion-content>
+<ion-footer>
+  <ion-grid class="patrocinadores">
+    <ion-row>
+      <ion-col>
+        <img src="../../../assets/patrocinadores/ADIESTRADORES.jpg" alt="..." class="img-thumbnail">
+      </ion-col>
+      <ion-col>
+        <img src="../../../assets/patrocinadores/ALIMENTACION-MASCOTAS.jpg" alt="..." class="img-thumbnail">
+      </ion-col>
+      <ion-col>
+        <img src="../../../assets/patrocinadores/ASOCIACION-VETERINARIOS.jpg" alt="..." class="img-thumbnail">
+      </ion-col>
+      <ion-col>
+        <img src="../../../assets/patrocinadores/CLINICA-VETERINARIA.jpg" alt="..." class="img-thumbnail">
+      </ion-col>
+      <ion-col>
+        <img src="../../../assets/patrocinadores/FRANQUICIAS-MASCOTAS.jpg" alt="..." class="img-thumbnail">
+      </ion-col>
+      <ion-col>
+        <img src="../../../assets/patrocinadores/HOTELES-CON-MASCOTAS.jpg" alt="..." class="img-thumbnail">
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>
+

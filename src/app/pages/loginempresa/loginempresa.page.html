@@ -30,11 +30,35 @@
         </div>
       </ng-container>
     </div>
-    <ion-button class="submit-btn" expand="block" type="submit" [disabled]="!validations_form.valid">Log In</ion-button>
+    <ion-button class="submit-btn" expand="block" type="submit" [disabled]="!validations_form.valid" routerLink="/categories">Log In</ion-button>
     <label class="error-message">{{errorMessage}}</label>
   </form>
-  
-  <p class="go-to-register">
-    No account yet? <a (click)="goRegisterPage()">Create an account.</a>
-  </p>
+<div text-center="">
+  <p class="go-to-register"> <a routerLink="/regisempresa">Crea tu Empresa</a> </p>
+</div>
 </ion-content>
+<ion-footer>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <img src="../../../assets/patrocinadores/ADIESTRADORES.jpg" alt="..." class="img-thumbnail">
+      </ion-col>
+      <ion-col>
+        <img src="../../../assets/patrocinadores/ALIMENTACION-MASCOTAS.jpg" alt="..." class="img-thumbnail">
+      </ion-col>
+      <ion-col>
+        <img src="../../../assets/patrocinadores/ASOCIACION-VETERINARIOS.jpg" alt="..." class="img-thumbnail">
+      </ion-col>
+      <ion-col>
+        <img src="../../../assets/patrocinadores/CLINICA-VETERINARIA.jpg" alt="..." class="img-thumbnail">
+      </ion-col>
+      <ion-col>
+        <img src="../../../assets/patrocinadores/FRANQUICIAS-MASCOTAS.jpg" alt="..." class="img-thumbnail">
+      </ion-col>
+      <ion-col>
+        <img src="../../../assets/patrocinadores/HOTELES-CON-MASCOTAS.jpg" alt="..." class="img-thumbnail">
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+</ion-footer>

@@ -27,13 +27,14 @@ export class AppComponent {
   initializeApp() {
     this.platform.ready().then(() => {
       this.afAuth.user.subscribe(user => {
+        console.log('user', user);
         if (user) {
           this.router.navigate(['/home-app']);
         } else {
           this.router.navigate(['/login']);
         }
       }, err => {
-        this.router.navigate(['/login']);
+        //this.router.navigate(['/login']);
       }, () => {
         this.splashScreen.hide();
       });

@@ -17,6 +17,8 @@ const routes: Routes = [
   { path: 'prelogin', loadChildren: './pages/prelogin/prelogin.module#PreloginPageModule' },
   { path: 'regisempresa', loadChildren: './pages/regisempresa/regisempresa.module#RegisempresaPageModule' },
   { path: 'loginempresa', loadChildren: './pages/loginempresa/loginempresa.module#LoginempresaPageModule' },
+  { path: 'terminos', loadChildren: './pages/terminos/terminos.module#TerminosPageModule' },
+  { path: 'lqpd', loadChildren: './pages/lqpd/lqpd.module#LqpdPageModule' },
 
   // { path: 'new-empresa-modal', loadChildren: './pages/new-empresa-modal/new-empresa-modal.module#NewEmpresaModalPageModule' },
 ];

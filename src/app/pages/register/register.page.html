@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar color="primary">
+  <ion-toolbar>
       <img src="../../../assets/imgs/fondo.png" alt="">
     <ion-title>Registro</ion-title>
   </ion-toolbar>
@@ -19,15 +19,33 @@
         </div>
       </ng-container>
     </div>
+    <ion-item>
+      <ion-label position="floating" color="primary">Localidad</ion-label>
+      <ion-input type="text" formControlName="localidad"></ion-input>
+    </ion-item>
 
     <ion-item>
-      <ion-label position="floating" color="primary">Password</ion-label>
-      <ion-input type="password" formControlName="password"></ion-input>
+      <ion-label formControlName="tipoMascota">Tipo de Mascota</ion-label>
+      <ion-select placeholder="Select One" cancelText="Cancelar" okText="Confirmar">
+        <ion-select-option value="perros">Perros</ion-select-option>
+        <ion-select-option value='gatos' >Gatos</ion-select-option>
+        <ion-select-option  value='hurones'>Hurones</ion-select-option>
+        <ion-select-option  value='peces'>Peces</ion-select-option>
+        <ion-select-option  value='caballos'>Caballos</ion-select-option>
+        <ion-select-option  value='Exoticos'>Exoticos</ion-select-option>
+      </ion-select>
     </ion-item>
+
     <ion-item>
-      <ion-label position="floating" color="primary">NOmbre</ion-label>
-      <ion-input type="text" formControlName="nombre"></ion-input>
+    <ion-label position="floating" color="primary">Password</ion-label>
+    <ion-input type="password" formControlName="password"></ion-input>
+  </ion-item>
+
+    <ion-item>
+      <ion-label position="floating" color="primary">Confirmar Contraseña</ion-label>
+      <ion-input type="password" formControlName="confirmarPassword"></ion-input>
     </ion-item>
+
     <div class="validation-errors">
       <ng-container *ngFor="let validation of validation_messages.password">
         <div class="error-message" *ngIf="validations_form.get('password').hasError(validation.type) && (validations_form.get('password').dirty || validations_form.get('password').touched)">
@@ -36,10 +54,49 @@
       </ng-container>
     </div>
 
+    <div class="inner-wrapper">
+      <ion-label class="label label-ios">
+        <p class="checkbox proteccion">Antes de registrarte revisa los <a  routerLink="/terminos" >Términos y condiciones</a> y la <a  routerLink="/lqpd">LOPD</a>.</p>
+      </ion-label>
+    </div>
+    <div class="inner-wrapper">
+      <ion-label class="label label-ios">
+        <ion-checkbox color="secondary"></ion-checkbox>
+        <p class="checkbox proteccion"> Haciendo click aquì acepto los terminos y condicione.</p>
+
+      </ion-label>
+    </div>
+
     <ion-button class="submit-btn" expand="block" type="submit" [disabled]="!validations_form.valid">Register</ion-button>
     <label class="error-message">{{errorMessage}}</label>
     <label class="success-message">{{successMessage}}</label>
   </form>
-  <p class="go-to-login">Already have an account? <a (click)="goLoginPage()">Try to Log In.</a></p>
+  <p class="go-to-login">Ya tienes una Cuenta? <a (click)="goLoginPage()"> Log In.</a></p>
 
 </ion-content>
+
+<ion-footer>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <img src="../../../assets/patrocinadores/ADIESTRADORES.jpg" alt="..." class="img-thumbnail">
+      </ion-col>
+      <ion-col>
+        <img src="../../../assets/patrocinadores/ALIMENTACION-MASCOTAS.jpg" alt="..." class="img-thumbnail">
+      </ion-col>
+      <ion-col>
+        <img src="../../../assets/patrocinadores/ASOCIACION-VETERINARIOS.jpg" alt="..." class="img-thumbnail">
+      </ion-col>
+      <ion-col>
+        <img src="../../../assets/patrocinadores/CLINICA-VETERINARIA.jpg" alt="..." class="img-thumbnail">
+      </ion-col>
+      <ion-col>
+        <img src="../../../assets/patrocinadores/FRANQUICIAS-MASCOTAS.jpg" alt="..." class="img-thumbnail">
+      </ion-col>
+      <ion-col>
+        <img src="../../../assets/patrocinadores/HOTELES-CON-MASCOTAS.jpg" alt="..." class="img-thumbnail">
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+</ion-footer>

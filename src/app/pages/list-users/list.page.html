@@ -26,7 +26,7 @@
           </ion-card-title>
           <ion-card-content>
             <img [src]="item.payload.doc.data().image" alt="...">
-            <ion-button fill="clear" slot="end">Detalle</ion-button>
+            <ion-button fill="clear" slot="end" class="texto-card">Detalles</ion-button>
           </ion-card-content>
         </ion-card-header>
       </ion-card>
@@ -38,7 +38,30 @@
   </div>
 </ion-content>
 <ion-footer (click)="logout()">
-  <ion-toolbar color="medium">
+  <ion-grid class="patrocinadores">
+    <ion-row>
+      <ion-col>
+        <img src="../../../assets/patrocinadores/ADIESTRADORES.jpg" alt="..." class="img-thumbnail">
+      </ion-col>
+      <ion-col>
+        <img src="../../../assets/patrocinadores/ALIMENTACION-MASCOTAS.jpg" alt="..." class="img-thumbnail">
+      </ion-col>
+      <ion-col>
+        <img src="../../../assets/patrocinadores/ASOCIACION-VETERINARIOS.jpg" alt="..." class="img-thumbnail">
+      </ion-col>
+      <ion-col>
+        <img src="../../../assets/patrocinadores/CLINICA-VETERINARIA.jpg" alt="..." class="img-thumbnail">
+      </ion-col>
+      <ion-col>
+        <img src="../../../assets/patrocinadores/FRANQUICIAS-MASCOTAS.jpg" alt="..." class="img-thumbnail">
+      </ion-col>
+      <ion-col>
+        <img src="../../../assets/patrocinadores/HOTELES-CON-MASCOTAS.jpg" alt="..." class="img-thumbnail">
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+  <ion-toolbar color="primary">
     <ion-title>Log out</ion-title>
   </ion-toolbar>
 </ion-footer>
