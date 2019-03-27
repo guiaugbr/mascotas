@@ -1,9 +1,10 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="home"></ion-back-button>
+    <ion-buttons slot="end">
+      <ion-back-button color="dark" defaultHref="home"></ion-back-button>
     </ion-buttons>
-    <ion-title>Información</ion-title>
+    <ion-title  text-center class="texto" [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form.value)"><h3><ion-input type="text" formControlName="title" [readonly]="true"></ion-input></h3>
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -11,7 +12,7 @@
   <div>
     <ion-row>
       <ion-col size="6" offset="3">
-        <img [src]="image" alt="this is the image"/>
+        <img class="imagen" [src]="image" alt="this is the image"/>
       </ion-col>
     </ion-row>
     <ion-row>
@@ -20,50 +21,96 @@
       </ion-col>
     </ion-row>
   </div>
+  
   <form [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form.value)">
+    <!--
     <ion-item>
-      <ion-label position="floating" color="primary">Title</ion-label>
-      <ion-input type="text" formControlName="title"></ion-input>
+      <ion-label position="floating" color="ion-color-dark">Nombre De La Empresa</ion-label>
+      <ion-input type="text" formControlName="title" [readonly]="true"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label position="floating" color="primary">Description</ion-label>
-      <ion-input type="text" formControlName="description"></ion-input>
+      <ion-label position="floating" color="ion-color-dark">Tratamientos</ion-label>
+      <ion-input type="text" formControlName="description" [readonly]="true"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label position="floating" color="primary">Dirección</ion-label>
-      <ion-input type="text" formControlName="direccion"></ion-input>
+      <ion-label position="floating" color="ion-color-dark">Dirección</ion-label>
+      <a href="www.google.com"><ion-input type="text" formControlName="direccion" [readonly]="true"></ion-input></a>
     </ion-item>
     <ion-item>
-      <ion-label position="floating" color="primary">Teléfono</ion-label>
-      <ion-input type="text" formControlName="telefono"></ion-input>
+      <ion-label position="floating" color="ion-color-dark">Teléfono</ion-label>
+      <ion-input  type="text" formControlName="telefono" [readonly]="true"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label position="floating" color="primary">DNI / CIF</ion-label>
+      <ion-label position="floating" color="ion-color-dark">Horarios</ion-label>
       <ion-input type="text" formControlName="cif"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label position="floating" color="primary">Código Postal</ion-label>
-      <ion-input type="text" formControlName="codPostal"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="floating" color="primary">Evento</ion-label>
-      <ion-input type="text" formControlName="evento"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="floating" color="primary">Especialidad</ion-label>
+      <ion-label position="floating" color="ion-color-dark">Especialidades</ion-label>
         <ion-input type="text" formControlName="especialidad" [readonly]="true"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label position="floating" color="primary">Email</ion-label>
-      <ion-input type="text" formControlName="email"></ion-input>
+      <ion-label position="floating" color="ion-color-dark">Correo Electronico</ion-label>
+      <ion-input  type="text" formControlName="email" [readonly]="true"></ion-input>
     </ion-item>
-    <ion-item>
-      <ion-label position="floating" color="primary">Plan</ion-label>
-      <ion-input type="text" formControlName="plan"></ion-input>
-    </ion-item>
-  <div text-center>
-    <ion-button  href="https://wa.me/+34644790417">Pedir Cita</ion-button>
+  -->
+    <div class="wrapper">
+
+
+<!---->
+<div class="half">
+    <div class="tab">
+      <input id="tab-one" type="checkbox" name="tabs2">
+      <label for="tab-one">Especialidades</label>
+      <div class="tab-content">
+          <img class="imagen-especialidades" src="../../../assets/imgs/especialidades.png">
+      </div>
+    </div>
+    <div class="tab">
+      <input id="tab-two" type="checkbox" name="tabs2">
+      <label for="tab-two">Campañas</label>
+      <div class="tab-content">
+          <ion-input type="text" formControlName="title" [readonly]="true"></ion-input>
+        </div>
+    </div>
+    <div class="tab">
+        <input id="tab-tres" type="checkbox" name="tabs2">
+        <label for="tab-tres">Dirección</label>
+        <div class="tab-content">
+            <ion-input type="text" formControlName="direccion" [readonly]="true"></ion-input>
+          </div>
+      </div>
+    <div class="tab">
+      <input id="tab-three" type="checkbox" name="tabs2">
+      <label for="tab-three">Horario</label>
+      <div class="tab-content">
+          <ion-input type="text" formControlName="cif" [readonly]="true"></ion-input>
+      </div>
+    </div>
+    <div class="tab">
+        <input id="tab-cuatro" type="checkbox" name="tabs2">
+        <label for="tab-cuatro">Contacto</label>
+        <div class="tab-content">
+            <ion-item>
+              <ion-input  type="text" formControlName="email" [readonly]="true"></ion-input>
+              </ion-item>   
+              <ion-item>
+                  <ion-input  type="tel" formControlName="telefono" [readonly]="true"></ion-input>
+            </ion-item>         </div>
+      </div>
   </div>
+</div>
+<!---->
+<div text-center>
+    <ion-button> 
+    Llamar
+    </ion-button>
+    </div>
+  
+    <div text-center>
+    <ion-button> 
+    Contactar
+    </ion-button>
+    </div>
 
 
   </form>

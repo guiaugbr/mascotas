@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder,ReactiveFormsModule, Validators, FormControl } from '@angular/forms';
-import { NavController } from '@ionic/angular';
-import { AuthService } from '../../services/auth.service';
-import { Router } from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+import {FormGroup, FormBuilder, ReactiveFormsModule, Validators, FormControl} from '@angular/forms';
+import {NavController} from '@ionic/angular';
+import {AuthService} from '../../services/auth.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-regisempresa',
@@ -17,40 +17,41 @@ export class RegisempresaPage implements OnInit {
 
   validation_messages = {
     'email': [
-      { type: 'required', message: 'Email is required.' },
-      { type: 'pattern', message: 'Enter a valid email.' }
+      {type: 'required', message: 'Correo Electronico es Requerido.'},
+      {type: 'pattern', message: 'Inserte un Correo Electronico Real.'}
     ],
     'password': [
-      { type: 'required', message: 'Contraseña Requerida.' },
-      { type: 'minlength', message: 'La Contraseña debe tener mas de 5 digitos.' }
+      {type: 'required', message: 'Contraseña Requerida.'},
+      {type: 'minlength', message: 'La Contraseña debe tener mas de 5 digitos.'}
     ],
     'confirmarPassword': [
-      { type: 'required', message: 'Confirmar Contraseña Requerida.' },
-      { type: 'minlength', message: 'la contraseña debe ser igual.' }
+      {type: 'required', message: 'Confirmar Contraseña Requerida.'},
+      {type: 'minlength', message: 'la Contraseña debe ser igual.'}
     ],
     'localidad': [
-      { type: 'required', message: 'Localidad es Requerida.' },
-      { type: 'minlength', message: 'Localidad es Requerida.' }
-    ],
-    'plan': [
-      { type: 'required', message: 'tipo de mascota es Requerida.' },
-      { type: 'minlength', message: 'tipo de mascota .' }
+      {type: 'required', message: 'Localidad es Requerida.'},
+      {type: 'minlength', message: 'Localidad es Requerida.'}
     ],
     'cif': [
-      { type: 'required', message: 'tipo de mascota es Requerida.' },
-      { type: 'minlength', message: 'tipo de mascota .' }
+      {type: 'required', message: 'Numero Cif Requerido.'},
+      {type: 'minlength', message: 'Numero CIF Requerido .'}
+    ],
+    'colegiado': [
+      {type: 'required', message: 'Numero de Colegiado Requerido.'},
+      {type: 'minlength', message: 'Numeor de Colegiado .'}
     ],
     'telefono': [
-      { type: 'required', message: 'tipo de mascota es Requerida.' },
-      { type: 'minlength', message: 'tipo de mascota .' }
-    ]
+      {type: 'required', message: 'Numero de Telefono Requeridoa.'},
+      {type: 'minlength', message: 'Numero de Telefono .'}
+    ],
   };
 
   constructor(
     private authService: AuthService,
     private formBuilder: FormBuilder,
     private router: Router
-  ) { }
+  ) {
+  }
 
   ngOnInit() {
     this.validations_form = this.formBuilder.group({
@@ -74,28 +75,36 @@ export class RegisempresaPage implements OnInit {
         Validators.minLength(3),
         Validators.required
       ])),
-      telefono: new FormControl('', Validators.compose([
+      colegiado: new FormControl('', Validators.compose([
         Validators.minLength(3),
         Validators.required
+      ])),
+      telefono: new FormControl('', Validators.compose([
+        Validators.minLength(9),
+        Validators.maxLength(9),
+        Validators.required
+      ])),
+      plan: new FormControl('', Validators.compose([
+        Validators.call(0,1),
       ])),
     });
   }
 
-  tryRegister(value){
+  tryRegister(value) {
     this.authService.doRegister(value)
       .then(res => {
         console.log(res);
-        this.errorMessage = "";
-        this.successMessage = "Your account has been created. Please log in.";
+        this.errorMessage = '';
+        this.successMessage = 'Your account has been created. Please log in.';
       }, err => {
         console.log(err);
         this.errorMessage = err.message;
-        this.successMessage = "";
-      })
+        this.successMessage = '';
+      });
   }
 
-  goLoginPage(){
-    this.router.navigate(["/login"]);
+  goLoginPage() {
+    this.router.navigate(['/loginempresa']);
   }
 
 }

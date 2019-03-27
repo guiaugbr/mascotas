@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="home"></ion-back-button>
     </ion-buttons>
-    <ion-title>Nueva Empresa</ion-title>
+    <ion-title class="texto-titulo">Nueva Empresa</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -16,78 +16,87 @@
     </ion-row>
     <ion-row no-padding>
       <ion-col size="6" offset="3">
-        <ion-button fill="outline" expand="block" size="small" (click)="openImagePicker()">Change Picture</ion-button>
+        <ion-button class="texto-boton" fill="outline" expand="block" size="small" (click)="openImagePicker()">Cambiar Foto</ion-button>
       </ion-col>
     </ion-row>
   </div>
   <form [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form.value)">
     <ion-item>
-      <ion-label position="floating" color="primary">Title</ion-label>
+      <ion-label position="floating" color="ion-color-dark">Nombre de la empresa</ion-label>
       <ion-input type="text" formControlName="title"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label position="floating" color="primary">Description</ion-label>
+      <ion-label position="floating" color="ion-color-dark">Descripción</ion-label>
       <ion-input type="text" formControlName="description"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label position="floating" color="primary">Dirección</ion-label>
+      <ion-label position="floating" color="ion-color-dark">Dirección</ion-label>
       <ion-input type="text" formControlName="direccion"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label position="floating" color="primary">Teléfono</ion-label>
+      <ion-label position="floating" color="ion-color-dark">Teléfono</ion-label>
       <ion-input type="text" formControlName="telefono"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label position="floating" color="primary">DNI / CIF</ion-label>
-      <ion-input type="text" formControlName="cif"></ion-input>
+      <ion-label position="floating" color="ion-color-dark">Horario</ion-label>
+      <ion-input placeholder="Lunes-Viernes 08:00 - 18:00" type="datepicker" formControlName="cif"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label position="floating" color="primary">Código Postal</ion-label>
+      <ion-label position="floating" color="ion-color-dark">Código Postal</ion-label>
       <ion-input type="text" formControlName="codPostal"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label position="floating" color="primary">Evento</ion-label>
-      <ion-input type="text" formControlName="evento"></ion-input>
+      <ion-label position="floating" color="ion-color-dark">N. de Colegiado</ion-label>
+      <ion-input type="text" formControlName="colegiado"></ion-input>
     </ion-item>
     <ion-list>
       <ion-radio-group formControlName="especialidad">
         <ion-list-header>
-          <ion-label>Especialidad</ion-label>
+          <ion-label color="ion-color-dark">Especialidad</ion-label>
         </ion-list-header>
         <ion-item>
-          <ion-label>Peluquería</ion-label>
+          <ion-label color="ion-color-dark">Peluquería</ion-label>
           <ion-radio slot="start" value="peluqueria" checked></ion-radio>
         </ion-item>
         <ion-item>
-          <ion-label>Veterinaria</ion-label>
+          <ion-label color="ion-color-dark">Veterinaria</ion-label>
           <ion-radio slot="start" value="veterinaria"></ion-radio>
         </ion-item>
         <ion-item>
-          <ion-label>Adopción</ion-label>
+          <ion-label color="ion-color-dark">Adopción</ion-label>
           <ion-radio slot="start" value="adopcion"></ion-radio>
         </ion-item>
         <ion-item>
-          <ion-label>Adiestramiento</ion-label>
+          <ion-label color="ion-color-dark">Adiestramiento</ion-label>
           <ion-radio slot="start" value="adiestramiento"></ion-radio>
         </ion-item>
         <ion-item>
-          <ion-label>Residencia</ion-label>
+          <ion-label color="ion-color-dark">Residencia</ion-label>
           <ion-radio slot="start" value="residencia"></ion-radio>
         </ion-item>
         <ion-item>
-          <ion-label>Tiendas</ion-label>
+          <ion-label color="ion-color-dark">Tiendas</ion-label>
           <ion-radio slot="start" value="tienda"></ion-radio>
         </ion-item>
       </ion-radio-group>
     </ion-list>
     <ion-item>
-      <ion-label position="floating" color="primary">Email</ion-label>
-      <ion-input type="text" formControlName="email"></ion-input>
+      <ion-label position="floating" color="ion-color-dark">Correo Electronico</ion-label>
+      <ion-input placeholder="Mascota@gmail.com" type="text" formControlName="email"></ion-input>
     </ion-item>
-    <ion-item>
-      <ion-label position="floating" color="primary">Plan</ion-label>
-      <ion-input type="text" formControlName="plan"></ion-input>
-    </ion-item>
-    <ion-button class="submit-btn" expand="block" type="submit" [disabled]="!validations_form.valid">Create</ion-button>
+  <!--  <ion-radio-group formControlName="plan">
+      <ion-list-header>
+        <ion-label>Plan</ion-label>
+      </ion-list-header>
+      <ion-item>
+        <ion-label>Free</ion-label>
+        <ion-radio slot="start" value="peluqueria" checked></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Premium</ion-label>
+        <ion-radio slot="start" value="adopcion"></ion-radio>
+      </ion-item>
+    </ion-radio-group>-->
+    <ion-button class="submit-btn" expand="block" type="submit" [disabled]="!validations_form.valid" class="boton-crear">Crear</ion-button>
   </form>
 </ion-content>

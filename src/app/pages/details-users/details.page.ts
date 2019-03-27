@@ -52,7 +52,7 @@ export class DetailsPage implements OnInit {
       evento: new FormControl(this.item.evento, Validators.required),
       especialidad: new FormControl(this.item.especialidad, Validators.required),
       email: new FormControl(this.item.email, Validators.required),
-      plan: new FormControl(this.item.plan, Validators.required)
+      especialidades: new FormControl(this.item.plan, Validators.required)
     });
   }
 
@@ -67,7 +67,7 @@ export class DetailsPage implements OnInit {
       evento: value.evento,
       especialidad: value.especialidad,
       email: value.email,
-      plan: value.plan,
+      especialidades: value.especialidades,
       image: this.image
     }
     this.firebaseService.updateEmpresa(this.item.id,data)

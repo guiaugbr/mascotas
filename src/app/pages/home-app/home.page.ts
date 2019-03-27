@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ViewChild } from '@angular/core';
 import {IonSlides} from '@ionic/angular';
+import { MenuController } from '@ionic/angular'
 
 @Component({
   selector: 'app-home',
@@ -8,6 +9,14 @@ import {IonSlides} from '@ionic/angular';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+
+  constructor(private menu: MenuController) { }
+
+  openFirst() {
+    this.menu.enable(true, 'first');
+    this.menu.open('first');
+  }
+
   @ViewChild(IonSlides) slides: IonSlides;
   goToSlide() {
     this.slides.slideTo(2, 500);

@@ -11,6 +11,8 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { ImagePicker } from '@ionic-native/image-picker/ngx';
 import { WebView } from '@ionic-native/ionic-webview/ngx';
+import { Geolocation } from '@ionic-native/geolocation/ngx';
+
 
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule, FirestoreSettingsToken } from '@angular/fire/firestore';
@@ -19,6 +21,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 
 import { environment } from '../environments/environment';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { Environment } from '@ionic-native/google-maps';
 // import { NewEmpresaModalPage } from './new-empresa-modal/new-empresa-modal.page';
 
 
@@ -42,6 +45,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     SplashScreen,
     ImagePicker,
     WebView,
+    Geolocation,
     { provide: FirestoreSettingsToken, useValue: {} },
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],

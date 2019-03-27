@@ -19,7 +19,8 @@ const routes: Routes = [
   { path: 'loginempresa', loadChildren: './pages/loginempresa/loginempresa.module#LoginempresaPageModule' },
   { path: 'terminos', loadChildren: './pages/terminos/terminos.module#TerminosPageModule' },
   { path: 'lqpd', loadChildren: './pages/lqpd/lqpd.module#LqpdPageModule' },
-
+  { path: 'preregister', loadChildren: './pages/preregister/preregister.module#PreregisterPageModule' },
+  { path: 'menu', loadChildren: './pages/menu/menu.module#MenuPageModule' },
   // { path: 'new-empresa-modal', loadChildren: './pages/new-empresa-modal/new-empresa-modal.module#NewEmpresaModalPageModule' },
 ];
 

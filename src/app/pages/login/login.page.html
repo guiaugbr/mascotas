@@ -1,14 +1,27 @@
 <ion-header>
-  <ion-toolbar>
-      <ion-back-button defaultHref="home"></ion-back-button>
-        <img src="../../../assets/imgs/fondo.png" alt="">
-      </ion-toolbar>
-  </ion-header>
+  <ion-toolbar class="logo">
+    <ion-buttons slot="end">
+      <ion-back-button class="flecha" defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-icon routerLink="/prelogin" slot="end" size="large"></ion-icon>
+    <ion-title >
+      <img class="fondo" src="../../../assets/imgs/fondo.png" alt="">
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
 
 <ion-content padding class="form-content">
+
+  <div  text-center>
+    <h5 text-center>Login</h5>
+  </div>
+
   <form class="form" [formGroup]="validations_form" (ngSubmit)="tryLogin(validations_form.value)">
     <ion-item>
-      <ion-label position="floating" color="primary">Email</ion-label>
+      <ion-label position="floating" color="ion-color-dark">Correo Electronico</ion-label>
       <ion-input type="text" formControlName="email"></ion-input>
     </ion-item>
     <div class="validation-errors">
@@ -19,7 +32,7 @@
       </ng-container>
     </div>
     <ion-item>
-      <ion-label position="floating" color="primary">Password</ion-label>
+      <ion-label position="floating" color="ion-color-dark">Contraseña</ion-label>
       <ion-input type="password" formControlName="password"></ion-input>
     </ion-item>
     <div class="validation-errors">
@@ -29,16 +42,19 @@
         </div>
       </ng-container>
     </div>
-    <ion-button class="submit-btn" expand="block" type="submit" [disabled]="!validations_form.valid">Log In</ion-button>
+    <ion-button class="submit-btn" expand="block" type="submit" [disabled]="!validations_form.valid" color="primary">Entrar</ion-button>
     <label class="error-message">{{errorMessage}}</label>
   </form>
   
   <p class="go-to-register">
-    No tienes una Cuenta? <a (click)="goRegisterPage()">Regístrate.</a>
+  No tienes una Cuenta? <a (click)="goRegisterPage()">Regístrate.</a>
+</p>
+  <p class="go-to-register">
+    Eres una Empresa? <a (click)="goLoginEmpresa()">Login Empresa.</a>
   </p>
 </ion-content>
 <ion-footer>
-  <ion-grid>
+  <ion-grid class="footer">
     <ion-row>
       <ion-col>
         <img src="../../../assets/patrocinadores/ADIESTRADORES.jpg" alt="..." class="img-thumbnail">

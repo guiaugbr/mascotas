@@ -43,7 +43,7 @@ export class NewEmpresaPage implements OnInit {
       evento: new FormControl(''),
       especialidad: new FormControl('', Validators.required),
       email: new FormControl('', Validators.required),
-      plan: new FormControl('', Validators.required)
+      plan: new FormControl('', )
     });
   }
 
@@ -62,34 +62,34 @@ export class NewEmpresaPage implements OnInit {
       image: this.image
     }
     this.firebaseService.createEmpresa(data)
-    .then(
-      res => {
-        this.router.navigate(["/home"]);
-      }
-    )
+      .then(
+        res => {
+          this.router.navigate(["/home"]);
+        }
+      )
   }
 
   openImagePicker(){
     this.imagePicker.hasReadPermission()
-    .then((result) => {
-      if(result == false){
-        // no callbacks required as this opens a popup which returns async
-        this.imagePicker.requestReadPermission();
-      }
-      else if(result == true){
-        this.imagePicker.getPictures({
-          maximumImagesCount: 1
-        }).then(
-          (results) => {
-            for (var i = 0; i < results.length; i++) {
-              this.uploadImageToFirebase(results[i]);
-            }
-          }, (err) => console.log(err)
-        );
-      }
-    }, (err) => {
-      console.log(err);
-    });
+      .then((result) => {
+        if(result == false){
+          // no callbacks required as this opens a popup which returns async
+          this.imagePicker.requestReadPermission();
+        }
+        else if(result == true){
+          this.imagePicker.getPictures({
+            maximumImagesCount: 1
+          }).then(
+            (results) => {
+              for (var i = 0; i < results.length; i++) {
+                this.uploadImageToFirebase(results[i]);
+              }
+            }, (err) => console.log(err)
+          );
+        }
+      }, (err) => {
+        console.log(err);
+      });
   }
 
   async uploadImageToFirebase(image){
@@ -106,13 +106,13 @@ export class NewEmpresaPage implements OnInit {
 
     //uploads img to firebase storage
     this.firebaseService.uploadImage(image_src, randomId)
-    .then(photoURL => {
-      this.image = photoURL;
-      loading.dismiss();
-      toast.present();
-    }, err =>{
-      console.log(err);
-    })
+      .then(photoURL => {
+        this.image = photoURL;
+        loading.dismiss();
+        toast.present();
+      }, err =>{
+        console.log(err);
+      })
   }
 
   async presentLoading(loading) {

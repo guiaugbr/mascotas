@@ -47,7 +47,7 @@ export class LoginPage implements OnInit {
   tryLogin(value) {
     this.authService.doLogin(value)
       .then(res => {
-        this.router.navigate(['/categories']);
+        this.router.navigate(['/home-app']);
       }, err => {
         this.errorMessage = err.message;
         console.log(err);
@@ -55,6 +55,9 @@ export class LoginPage implements OnInit {
   }
 
   goRegisterPage() {
-    this.router.navigate(['/register']);
+    this.router.navigate(['/prelogin']);
+  }
+  goLoginEmpresa() {
+    this.router.navigate(['/loginempresa']);
   }
 }

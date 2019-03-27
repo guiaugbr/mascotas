@@ -49,7 +49,7 @@ export class DetailsPage implements OnInit {
       telefono: new FormControl(this.item.telefono, Validators.required),
       cif: new FormControl(this.item.cif, Validators.required),
       codPostal: new FormControl(this.item.codPostal, Validators.required),
-      evento: new FormControl(this.item.evento, Validators.required),
+      colegiado: new FormControl(this.item.evento, Validators.required),
       especialidad: new FormControl(this.item.especialidad, Validators.required),
       email: new FormControl(this.item.email, Validators.required),
       plan: new FormControl(this.item.plan, Validators.required)
@@ -64,7 +64,7 @@ export class DetailsPage implements OnInit {
       telefono: value.telefono,
       cif: value.cif,
       codPostal: value.codPostal,
-      evento: value.evento,
+      colegiado: value.evento,
       especialidad: value.especialidad,
       email: value.email,
       plan: value.plan,

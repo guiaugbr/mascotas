@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { LoadingController } from '@ionic/angular';
 import { Router, ActivatedRoute } from '@angular/router';
+import { Geolocation } from '@ionic-native/geolocation/ngx';
+
+declare var google;
 
 @Component({
   selector: 'list',
@@ -9,6 +12,8 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./list.page.scss'],
 })
 export class ListPage implements OnInit {
+
+  mapRef = null;
 
   items: Array<any>;
 
@@ -22,10 +27,12 @@ export class ListPage implements OnInit {
     public loadingCtrl: LoadingController,
     private authService: AuthService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private geolocation: Geolocation
   ) { }
 
   ngOnInit() {
+    this.loadMap();
     if (this.route && this.route.data) {
       this.getData();
     }
@@ -56,6 +63,38 @@ export class ListPage implements OnInit {
     }, err => {
       console.log(err);
     });
+  }
+
+  async loadMap() {
+    const loading = await this.loadingCtrl.create();
+    loading.present();
+    const myLatLng = await this.getLocation();
+    const mapEle: HTMLElement = document.getElementById('map');
+    this.mapRef = new google.maps.Map(mapEle, {
+      center: myLatLng,
+      zoom: 12
+    });
+    google.maps.event
+      .addListenerOnce(this.mapRef, 'idle', () => {
+        loading.dismiss();
+        this.addMaker(myLatLng.lat, myLatLng.lng);
+      });
+  }
+
+  private addMaker(lat: number, lng: number) {
+    const marker = new google.maps.Marker({
+      position: { lat, lng },
+      map: this.mapRef,
+      title: 'Hello World!'
+    });
+  }
+
+  private async getLocation() {
+    const rta = await this.geolocation.getCurrentPosition();
+    return {
+      lat: rta.coords.latitude,
+      lng: rta.coords.longitude
+    };
   }
 
 }

@@ -3,109 +3,68 @@
     <ion-buttons slot="start">
     </ion-buttons>
     <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
+      <ion-menu-button>
+      </ion-menu-button>
     </ion-buttons>
-    <ion-icon routerLink="/loginempresa" slot="end" size="large" name="contact"></ion-icon>
-    <ion-title>
-      <img src="../../../assets/imgs/fondo.png" alt="">
-      <h6>Aquí, todo para tu mascota</h6>
+    <ion-title text-center>
+      <img class="fondo" src="../../../assets/imgs/fondo.png" alt="">
+      <h3 class="texto-header">Aquí, todo para tu mascota</h3>
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
+
 <ion-content>
-  <h6 text-center>Elije tu centro y pide cita</h6>
+
+
+
+
+
+  <h5 text-center>Elije tu centro y pide cita</h5>
   <ion-grid>
     <ion-row>
-      <ion-col size="6">
-        <ion-card [routerLink]="['/list-users', 'peluqueria']" class="welcome-card">
-          <ion-img src="../../assets/imgs/MascotaActual-peluqueria.jpg"></ion-img>
-          <ion-card-header>
-            <ion-card-title text-center class="titulo"><p>Peluquerías</p></ion-card-title>
-          </ion-card-header>
-        </ion-card>
+      <ion-col class="columna" size="6">
+          <img class="card-view1" src="../../../assets/cards/peluquerias.png" alt="" [routerLink]="['/list-users', 'peluqueria']">
       </ion-col>
       <ion-col size="6">
-        <ion-card [routerLink]="['/list-users', 'veterinaria']" class="welcome-card">
-          <ion-img src="../../assets/imgs/MascotaActual-veterinaria.jpg"></ion-img>
-          <ion-card-header>
-            <ion-card-title text-center class="titulo"><p>Clínicas</p></ion-card-title>
-          </ion-card-header>
-        </ion-card>
+        <img class="card-view" src="../../../assets/cards/veterinaria.png" alt="" [routerLink]="['/list-users', 'veterinaria']">
+
+      </ion-col>
+      <ion-col class="columna1" size="6">
+        <img class="card-view1" src="../../../assets/cards/tiendas.png" alt="" [routerLink]="['/list-users', 'tienda']">
+
       </ion-col>
       <ion-col size="6">
-        <ion-card [routerLink]="['/list-users', 'tienda']" class="welcome-card">
-          <ion-img src="../../assets/imgs/MascotaAnimal-eventos.jpg"></ion-img>
-          <ion-card-header>
-            <ion-card-title text-center class="titulo"><p>Eventos</p></ion-card-title>
-          </ion-card-header>
-        </ion-card>
+        <img class="card-view" src="../../../assets/cards/adiestradores.png" alt="" [routerLink]="['/list-users', 'adiestramiento']">
+
       </ion-col>
       <ion-col size="6">
-        <ion-card [routerLink]="['/list-users', 'tienda']" class="welcome-card">
-          <ion-img src="../../assets/imgs/MascotaAnimal-Tienda.jpg"></ion-img>
-          <ion-card-header>
-            <ion-card-title text-center class="titulo"><p>Tiendas</p></ion-card-title>
-          </ion-card-header>
-        </ion-card>
+        <img class="card-view1" src="../../../assets/cards/residencias.png" alt="" [routerLink]="['/list-users', 'recidencia']">
+
       </ion-col>
       <ion-col size="6">
-        <ion-card [routerLink]="['/list-users', 'adiestramiento']" class="welcome-card">
-          <ion-img src="../../assets/imgs/MascotaActual-Adiestradores.jpg"></ion-img>
-          <ion-card-header>
-            <ion-card-title text-center class="titulo"><p>Adiestramiento</p></ion-card-title>
-          </ion-card-header>
-        </ion-card>
+        <img class="card-view" src="../../../assets/cards/adoptame.png" alt="" [routerLink]="['/list-users', 'adopcion']">
+
       </ion-col>
       <ion-col size="6">
-        <ion-card [routerLink]="['/list-users', 'residencia']" class="welcome-card">
-          <ion-img src="../../assets/imgs/MascotaAnimal-Residencias.jpg"></ion-img>
-          <ion-card-header>
-            <ion-card-title text-center class="titulo"><p>Residencias</p></ion-card-title>
-          </ion-card-header>
-        </ion-card>
-      </ion-col>
-      <ion-col size="6">
-        <ion-card [routerLink]="['/list-users', 'adopcion']" class="welcome-card">
-          <ion-img src="../../assets/imgs/MascotaAnimal-adoptame.jpg"></ion-img>
-          <ion-card-header>
-            <ion-card-title text-center class="titulo"><p>Adóptame</p></ion-card-title>
-          </ion-card-header>
-        </ion-card>
-      </ion-col>
-      <ion-col size="6">
-        <ion-card class="welcome-card">
-          <ion-img src="../../assets/imgs/MascotaAnimal-otros.jpg"></ion-img>
-          <ion-card-header>
-            <ion-card-title text-center class="titulo"><p>Otros</p></ion-card-title>
-          </ion-card-header>
-        </ion-card>
+        <img class="card-view-campañas" src="../../../assets/cards/campañas.png" alt="">
+
       </ion-col>
     </ion-row>
   </ion-grid>
 
-  <ion-grid>
-    <ion-row>
-      <ion-col>
-        <img src="../../../assets/patrocinadores/ADIESTRADORES.jpg" alt="..." class="img-thumbnail">
-      </ion-col>
-      <ion-col>
-        <img src="../../../assets/patrocinadores/ALIMENTACION-MASCOTAS.jpg" alt="..." class="img-thumbnail">
-      </ion-col>
-      <ion-col>
-        <img src="../../../assets/patrocinadores/ASOCIACION-VETERINARIOS.jpg" alt="..." class="img-thumbnail">
-      </ion-col>
-      <ion-col>
-        <img src="../../../assets/patrocinadores/CLINICA-VETERINARIA.jpg" alt="..." class="img-thumbnail">
-      </ion-col>
-      <ion-col>
-        <img src="../../../assets/patrocinadores/FRANQUICIAS-MASCOTAS.jpg" alt="..." class="img-thumbnail">
-      </ion-col>
-      <ion-col>
-        <img src="../../../assets/patrocinadores/HOTELES-CON-MASCOTAS.jpg" alt="..." class="img-thumbnail">
-      </ion-col>
+    <div text-center>
+      <p class="text-patro">Conoce a nuestros Patrocinadores</p>
+    </div>
 
-    </ion-row>
-  </ion-grid>
+  <div class="scrollmenu">
+    <a href="#home"><img src="../../../assets/patrocinadores/ADIESTRADORES.jpg" alt="..." class="img-thumbnail"></a>
+    <a href="#news"><img src="../../../assets/patrocinadores/ALIMENTACION-MASCOTAS.jpg" alt="..." class="img-thumbnail"></a>
+    <a href="#contact"><img src="../../../assets/patrocinadores/ASOCIACION-VETERINARIOS.jpg" alt="..." class="img-thumbnail"></a>
+    <a href="#about"><img src="../../../assets/patrocinadores/CLINICA-VETERINARIA.jpg" alt="..." class="img-thumbnail"></a>
+    <a href="#home"><img src="../../../assets/patrocinadores/FRANQUICIAS-MASCOTAS.jpg" alt="..." class="img-thumbnail"></a>
+    <a href="#contact"><img src="../../../assets/patrocinadores/HOTELES-CON-MASCOTAS.jpg" alt="..." class="img-thumbnail"></a>
+  </div>
+
 
 </ion-content>

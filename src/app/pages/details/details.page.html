@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="home"></ion-back-button>
     </ion-buttons>
-    <ion-title>Detalle</ion-title>
+    <ion-title>Información</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -16,54 +16,51 @@
     </ion-row>
     <ion-row>
       <ion-col size="6" offset="3">
-        <ion-button fill="outline" expand="block" size="small" (click)="openImagePicker()">Cambiar imagen</ion-button>
+        <ion-button fill="outline" expand="block" size="small" color="ion-color-dark" class="text-boton" (click)="openImagePicker()">Cambiar imagen</ion-button>
       </ion-col>
     </ion-row>
   </div>
   <form [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form.value)">
     <ion-item>
-      <ion-label position="floating" color="primary">Title</ion-label>
-      <ion-input type="text" formControlName="title"></ion-input>
+      <ion-label position="floating" color="ion-color-dark">Nombre de la Empresa</ion-label>
+      <ion-input type="text" formControlName="title" [readonly]="true"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label position="floating" color="primary">Description</ion-label>
-      <ion-input type="text" formControlName="description"></ion-input>
+      <ion-label position="floating" color="ion-color-dark">Descripción</ion-label>
+      <ion-input type="text" formControlName="description" [readonly]="true"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label position="floating" color="primary">Dirección</ion-label>
-      <ion-input type="text" formControlName="direccion"></ion-input>
+      <ion-label position="floating" color="ion-color-dark"><a>Dirección</a></ion-label>
+      <ion-input type="text" formControlName="direccion" [readonly]="true"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label position="floating" color="primary">Teléfono</ion-label>
-      <ion-input type="text" formControlName="telefono"></ion-input>
+      <ion-label position="floating" color="ion-color-dark">Teléfono</ion-label>
+      <ion-input type="number" formControlName="telefono" [readonly]="true"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label position="floating" color="primary">DNI / CIF</ion-label>
-      <ion-input type="text" formControlName="cif"></ion-input>
+      <ion-label position="floating" color="ion-color-dark">DNI / CIF</ion-label>
+      <ion-input type="text" formControlName="cif" [readonly]="true"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label position="floating" color="primary">Código Postal</ion-label>
-      <ion-input type="text" formControlName="codPostal"></ion-input>
+      <ion-label position="floating" color="ion-color-dark">N. Colegiado</ion-label>
+      <ion-input type="text" formControlName="colegiado" [readonly]="true"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label position="floating" color="primary">Evento</ion-label>
-      <ion-input type="text" formControlName="evento"></ion-input>
+      <ion-label position="floating" color="ion-color-dark">Código Postal</ion-label>
+      <ion-input type="text" formControlName="codPostal" [readonly]="true"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label position="floating" color="primary">Especialidad</ion-label>
+      <ion-label position="floating" color="ion-color-dark">Especialidad</ion-label>
         <ion-input type="text" formControlName="especialidad" [readonly]="true"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label position="floating" color="primary">Email</ion-label>
-      <ion-input type="text" formControlName="email"></ion-input>
+      <ion-label position="floating" color="primary">Correo Electronico</ion-label>
+      <ion-input type="text" formControlName="email" [readonly]="true"></ion-input>
     </ion-item>
-    <ion-item>
-      <ion-label position="floating" color="primary">Plan</ion-label>
-      <ion-input type="text" formControlName="plan"></ion-input>
-    </ion-item>
-
-    <ion-button class="submit-button" expand="block" type="submit" [disabled]="!validations_form.valid">Save</ion-button>
+   <!--
+    <ion-button class="submit-button" expand="block" type="submit" [disabled]="!validations_form.valid">Save</ion-button>-->
   </form>
-  <ion-button class="delete-button" expand="block" color="danger" (click)="delete()">Borrar</ion-button>
+  <!--
+  <ion-button class="delete-button" expand="block" color="danger" (click)="delete()">Borrar</ion-button>-->
 
 </ion-content>
