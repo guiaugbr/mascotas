@@ -15,7 +15,7 @@
 
 <ion-content padding class="form-content">
   <div text-center>
-    <h5>Login de Empresas</h5>
+    <h5>Inicio de sesión Empresas</h5>
   </div>
   <form class="form" [formGroup]="validations_form" (ngSubmit)="tryLogin(validations_form.value)">
     <ion-item>
@@ -40,35 +40,25 @@
         </div>
       </ng-container>
     </div>
-    <ion-button class="boton" expand="block" type="submit" [disabled]="!validations_form.valid">Log In</ion-button>
+    <ion-button class="boton" expand="block" type="submit" [disabled]="!validations_form.valid">Iniciar Sesión</ion-button>
     <label class="error-message">{{errorMessage}}</label>
   </form>
 <div text-center="">
-  <p class="go-to-register"> <a class="texto-form" (click)="goRegisterPage()">Crea tu Empresa</a> </p>
+  <p class="go-to-register"> <a  (click)="goRegisterPage()" color="primary">Registro de Empresa</a> </p>
 </div>
 </ion-content>
-<ion-footer>
-  <ion-grid class="footer">
-    <ion-row>
-      <ion-col>
-        <img src="../../../assets/patrocinadores/ADIESTRADORES.jpg" alt="..." class="img-thumbnail">
-      </ion-col>
-      <ion-col>
-        <img src="../../../assets/patrocinadores/ALIMENTACION-MASCOTAS.jpg" alt="..." class="img-thumbnail">
-      </ion-col>
-      <ion-col>
-        <img src="../../../assets/patrocinadores/ASOCIACION-VETERINARIOS.jpg" alt="..." class="img-thumbnail">
-      </ion-col>
-      <ion-col>
-        <img src="../../../assets/patrocinadores/CLINICA-VETERINARIA.jpg" alt="..." class="img-thumbnail">
-      </ion-col>
-      <ion-col>
-        <img src="../../../assets/patrocinadores/FRANQUICIAS-MASCOTAS.jpg" alt="..." class="img-thumbnail">
-      </ion-col>
-      <ion-col>
-        <img src="../../../assets/patrocinadores/HOTELES-CON-MASCOTAS.jpg" alt="..." class="img-thumbnail">
-      </ion-col>
+<ion-footer class="footer">
 
-    </ion-row>
-  </ion-grid>
+  <div text-center>
+    <a href="#" class="text-preguntas">Preguntas frecuentes</a>
+  </div>
+
+  <div class="scrollmenu">
+    <a href="#home"><img src="../../../assets/patrocinadores/ADIESTRADORES.jpg" alt="..." class="img-thumbnail"></a>
+    <a href="#news"><img src="../../../assets/patrocinadores/ALIMENTACION-MASCOTAS.jpg" alt="..." class="img-thumbnail"></a>
+    <a href="#contact"><img src="../../../assets/patrocinadores/ASOCIACION-VETERINARIOS.jpg" alt="..." class="img-thumbnail"></a>
+    <a href="#about"><img src="../../../assets/patrocinadores/CLINICA-VETERINARIA.jpg" alt="..." class="img-thumbnail"></a>
+    <a href="#home"><img src="../../../assets/patrocinadores/FRANQUICIAS-MASCOTAS.jpg" alt="..." class="img-thumbnail"></a>
+    <a href="#contact"><img src="../../../assets/patrocinadores/HOTELES-CON-MASCOTAS.jpg" alt="..." class="img-thumbnail"></a>
+  </div>
 </ion-footer>

@@ -32,6 +32,8 @@ export class FirebaseService {
     });
   }
 
+
+
   getEmpresa(empresaId) {
     return new Promise<any>((resolve, reject) => {
       this.snapshotChangesSubscription = this.afs.doc<any>('/empresas/' + empresaId).valueChanges()
@@ -75,10 +77,12 @@ export class FirebaseService {
         description: value.description,
         direccion: value.direccion,
         telefono: value.telefono,
+        campañas: value.campañas,
+        horario: value.horario,
         cif: value.cif,
         codPostal: value.codPostal,
-        evento: value.evento,
         especialidad: value.especialidad,
+        especialidades: value.especialidades,
         email: value.email,
         plan: value.plan,
         image: value.image

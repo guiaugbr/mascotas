@@ -13,6 +13,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class DetailsPage implements OnInit {
 
+
   validations_form: FormGroup;
   image: any;
   item: any;
@@ -49,10 +50,11 @@ export class DetailsPage implements OnInit {
       telefono: new FormControl(this.item.telefono, Validators.required),
       cif: new FormControl(this.item.cif, Validators.required),
       codPostal: new FormControl(this.item.codPostal, Validators.required),
-      evento: new FormControl(this.item.evento, Validators.required),
+     campañas: new FormControl(this.item.campañas, Validators.required),
+      horario: new FormControl(this.item.horario, Validators.required),
       especialidad: new FormControl(this.item.especialidad, Validators.required),
       email: new FormControl(this.item.email, Validators.required),
-      especialidades: new FormControl(this.item.plan, Validators.required)
+      especialidades: new FormControl(this.item.especialidades, Validators.required)
     });
   }
 
@@ -62,9 +64,10 @@ export class DetailsPage implements OnInit {
       description: value.description,
       direccion: value.direccion,
       telefono: value.telefono,
+      campañas: value.campañas,
+      horario: value.horario,
       cif: value.cif,
       codPostal: value.codPostal,
-      evento: value.evento,
       especialidad: value.especialidad,
       email: value.email,
       especialidades: value.especialidades,

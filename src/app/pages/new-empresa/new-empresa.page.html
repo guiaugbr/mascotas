@@ -23,7 +23,7 @@
   <form [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form.value)">
     <ion-item>
       <ion-label position="floating" color="ion-color-dark">Nombre de la empresa</ion-label>
-      <ion-input type="text" formControlName="title"></ion-input>
+      <ion-input placeholder="Mascota Actual" type="text" formControlName="title"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="floating" color="ion-color-dark">Descripción</ion-label>
@@ -35,19 +35,23 @@
     </ion-item>
     <ion-item>
       <ion-label position="floating" color="ion-color-dark">Teléfono</ion-label>
-      <ion-input type="text" formControlName="telefono"></ion-input>
+      <ion-input placeholder=" 123654321" type="number" formControlName="telefono">+34-</ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating" color="ion-color-dark">CIF</ion-label>
+      <ion-input placeholder="Cif" type="datepicker" formControlName="cif"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="floating" color="ion-color-dark">Horario</ion-label>
-      <ion-input placeholder="Lunes-Viernes 08:00 - 18:00" type="datepicker" formControlName="cif"></ion-input>
+      <ion-input placeholder="Lunes-Viernes 08:00 - 18:00" type="datepicker" formControlName="horario"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label position="floating" color="ion-color-dark">Código Postal</ion-label>
-      <ion-input type="text" formControlName="codPostal"></ion-input>
+      <ion-label position="floating" color="ion-color-dark">Campañas</ion-label>
+      <ion-input placeholder="Obten 25% de Descuento al llamarnos" type="text" formControlName="campañas"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label position="floating" color="ion-color-dark">N. de Colegiado</ion-label>
-      <ion-input type="text" formControlName="colegiado"></ion-input>
+      <ion-label position="floating" color="ion-color-dark">Codigo Postal</ion-label>
+      <ion-input placeholder="42000" type="number" formControlName="codPostal"></ion-input>
     </ion-item>
     <ion-list>
       <ion-radio-group formControlName="especialidad">
@@ -78,25 +82,49 @@
           <ion-label color="ion-color-dark">Tiendas</ion-label>
           <ion-radio slot="start" value="tienda"></ion-radio>
         </ion-item>
+        <ion-item>
+          <ion-label color="ion-color-dark">Campañas</ion-label>
+          <ion-radio slot="start" value="campañas"></ion-radio>
+        </ion-item>
       </ion-radio-group>
+    </ion-list>
+    <ion-list>
+      <ion-radio-group formControlName="especialidades">
+        <ion-label>Especialidades</ion-label>
+        <ion-select placeholder="Seleccionar Especialidad" multiple="true" cancelText="Cancelar" okText="Aceptar!">
+          <ion-select-option value="baño">Baño</ion-select-option>
+          <ion-select-option value="bañoyarreglo">Baño y Arreglo</ion-select-option>
+          <ion-select-option value="cortes">Cortes de Esposición</ion-select-option>
+          <ion-select-option value="stripping">Stripping</ion-select-option>
+          <ion-select-option value="desenredado">Desenredado</ion-select-option>
+          <ion-select-option value="razasppp">Razas PPP</ion-select-option>
+          <ion-select-option value="bañoycorte">Baños y Corte</ion-select-option>
+          <ion-select-option value="cortesderaza">Cortes de Raza</ion-select-option>
+          <ion-select-option value="autolavado">Autolavado</ion-select-option>
+          <ion-select-option value="corteuñas">Corte de Uñas</ion-select-option>
+        </ion-select>
+        </ion-radio-group>
     </ion-list>
     <ion-item>
       <ion-label position="floating" color="ion-color-dark">Correo Electronico</ion-label>
       <ion-input placeholder="Mascota@gmail.com" type="text" formControlName="email"></ion-input>
     </ion-item>
-  <!--  <ion-radio-group formControlName="plan">
+  <ion-radio-group formControlName="plan">
       <ion-list-header>
         <ion-label>Plan</ion-label>
       </ion-list-header>
       <ion-item>
         <ion-label>Free</ion-label>
-        <ion-radio slot="start" value="peluqueria" checked></ion-radio>
+        <ion-radio slot="start" value="gratis" checked></ion-radio>
       </ion-item>
       <ion-item>
         <ion-label>Premium</ion-label>
-        <ion-radio slot="start" value="adopcion"></ion-radio>
+        <ion-radio slot="start" value="premium"></ion-radio>
       </ion-item>
-    </ion-radio-group>-->
+    </ion-radio-group>
+    <div text-center>
+      <a href="#">Contactar para Premium</a>
+    </div>
     <ion-button class="submit-btn" expand="block" type="submit" [disabled]="!validations_form.valid" class="boton-crear">Crear</ion-button>
   </form>
 </ion-content>

@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar class="logo">
-    <ion-buttons slot="start">
+    <ion-buttons slot="end">
       <ion-back-button defaultHref="home"></ion-back-button>
     </ion-buttons>
     <ion-buttons slot="start">
@@ -14,13 +14,13 @@
 </ion-header>
 
 <ion-content padding class="form-content">
-  <div>
-    <h5>Regristro de Usuarios</h5>
+  <div text-center="">
+    <h5>Registro de Usuarios</h5>
   </div>
   <form class="form" [formGroup]="validations_form" (ngSubmit)="tryRegister(validations_form.value)">
 
     <ion-item>
-      <ion-label position="floating" color="primary">Email</ion-label>
+      <ion-label position="floating" color="ion-color-dark">Correo Electronico</ion-label>
       <ion-input type="text" formControlName="email"></ion-input>
     </ion-item>
     <div class="validation-errors">
@@ -31,12 +31,12 @@
       </ng-container>
     </div>
     <ion-item>
-      <ion-label position="floating" color="primary">Localidad</ion-label>
+      <ion-label position="floating" color="ion-color-dark">Localidad</ion-label>
       <ion-input type="text" formControlName="localidad"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label formControlName="tipoMascota">Tipo de Mascota</ion-label>
+      <ion-label formControlName="tipoMascota" color="ion-color-dark">Tipo de Mascota</ion-label>
       <ion-select multiple="true" placeholder="Select One" cancelText="Cancelar" okText="Confirmar">
         <ion-select-option value="perros">Perros</ion-select-option>
         <ion-select-option value='gatos' >Gatos</ion-select-option>
@@ -48,12 +48,12 @@
     </ion-item>
 
     <ion-item>
-    <ion-label position="floating" color="primary">Password</ion-label>
+    <ion-label position="floating" color="ion-color-dark">Contraseña</ion-label>
     <ion-input type="password" formControlName="password"></ion-input>
   </ion-item>
 
     <ion-item>
-      <ion-label position="floating" color="primary">Confirmar Contraseña</ion-label>
+      <ion-label position="floating" color="ion-color-dark">Confirmar Contraseña</ion-label>
       <ion-input type="password" formControlName="confirmarPassword"></ion-input>
     </ion-item>
 
@@ -65,49 +65,48 @@
       </ng-container>
     </div>
 
-    <div class="inner-wrapper">
-      <ion-label class="label label-ios">
-        <p class="checkbox proteccion">Antes de registrarte revisa los <a  routerLink="/terminos" >Términos y condiciones</a> y la <a  routerLink="/lqpd">LOPD</a>.</p>
-      </ion-label>
-    </div>
-    <div class="inner-wrapper">
-      <ion-label class="label label-ios">
-        <ion-checkbox color="secondary"></ion-checkbox>
-        <p class="checkbox proteccion"> Haciendo click aquì acepto los terminos y condicione.</p>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12">
+          <div class="inner-wrapper">
+            <ion-label class="label label-ios">
+              <p class="checkbox proteccion">Antes de registrarte revisa los <a  routerLink="/terminos" >Términos y condiciones</a> y la <a  routerLink="/lqpd">LOPD</a>.</p>
+            </ion-label>
+          </div>
+        </ion-col>
+        <ion-col size="12">
+          <div class="inner-wrapper">
+            <ion-label class="label label-ios">
+              <ion-checkbox class="check" color="primary"></ion-checkbox>
+              <p  class="terminos"> Haciendo click aquì acepto los terminos y condicione.</p>
 
-      </ion-label>
-    </div>
+            </ion-label>
+          </div>
+        </ion-col>
+      </ion-row>
+
+    </ion-grid>
 
     <ion-button class="submit-btn" expand="block" type="submit" [disabled]="!validations_form.valid">Register</ion-button>
     <label class="error-message">{{errorMessage}}</label>
     <label class="success-message">{{successMessage}}</label>
   </form>
-  <p class="go-to-login">Ya tienes una Cuenta? <a (click)="goLoginPage()"> Log In.</a></p>
+  <p class="go-to-login">Ya tienes una Cuenta? <a (click)="goLoginPage()">Iniciar Sesión.</a></p>
 
 </ion-content>
 
-<ion-footer>
-  <ion-grid>
-    <ion-row>
-      <ion-col>
-        <img src="../../../assets/patrocinadores/ADIESTRADORES.jpg" alt="..." class="img-thumbnail">
-      </ion-col>
-      <ion-col>
-        <img src="../../../assets/patrocinadores/ALIMENTACION-MASCOTAS.jpg" alt="..." class="img-thumbnail">
-      </ion-col>
-      <ion-col>
-        <img src="../../../assets/patrocinadores/ASOCIACION-VETERINARIOS.jpg" alt="..." class="img-thumbnail">
-      </ion-col>
-      <ion-col>
-        <img src="../../../assets/patrocinadores/CLINICA-VETERINARIA.jpg" alt="..." class="img-thumbnail">
-      </ion-col>
-      <ion-col>
-        <img src="../../../assets/patrocinadores/FRANQUICIAS-MASCOTAS.jpg" alt="..." class="img-thumbnail">
-      </ion-col>
-      <ion-col>
-        <img src="../../../assets/patrocinadores/HOTELES-CON-MASCOTAS.jpg" alt="..." class="img-thumbnail">
-      </ion-col>
+<ion-footer class="footer">
+  <div text-center>
+    <p class="text-patro">Conoce a nuestros Patrocinadores</p>
+  </div>
 
-    </ion-row>
-  </ion-grid>
+  <div class="scrollmenu">
+    <a href="#home"><img src="../../../assets/patrocinadores/ADIESTRADORES.jpg" alt="..." class="img-thumbnail"></a>
+    <a href="#news"><img src="../../../assets/patrocinadores/ALIMENTACION-MASCOTAS.jpg" alt="..." class="img-thumbnail"></a>
+    <a href="#contact"><img src="../../../assets/patrocinadores/ASOCIACION-VETERINARIOS.jpg" alt="..." class="img-thumbnail"></a>
+    <a href="#about"><img src="../../../assets/patrocinadores/CLINICA-VETERINARIA.jpg" alt="..." class="img-thumbnail"></a>
+    <a href="#home"><img src="../../../assets/patrocinadores/FRANQUICIAS-MASCOTAS.jpg" alt="..." class="img-thumbnail"></a>
+    <a href="#contact"><img src="../../../assets/patrocinadores/HOTELES-CON-MASCOTAS.jpg" alt="..." class="img-thumbnail"></a>
+  </div>
 </ion-footer>
+

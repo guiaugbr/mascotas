@@ -55,7 +55,7 @@ export class LoginPage implements OnInit {
   }
 
   goRegisterPage() {
-    this.router.navigate(['/prelogin']);
+    this.router.navigate(['/preregister']);
   }
   goLoginEmpresa() {
     this.router.navigate(['/loginempresa']);

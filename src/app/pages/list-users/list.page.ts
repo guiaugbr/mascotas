@@ -96,5 +96,4 @@ export class ListPage implements OnInit {
       lng: rta.coords.longitude
     };
   }
-
 }

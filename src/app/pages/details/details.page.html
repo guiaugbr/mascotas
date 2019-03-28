@@ -42,10 +42,6 @@
       <ion-input type="text" formControlName="cif" [readonly]="true"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label position="floating" color="ion-color-dark">N. Colegiado</ion-label>
-      <ion-input type="text" formControlName="colegiado" [readonly]="true"></ion-input>
-    </ion-item>
-    <ion-item>
       <ion-label position="floating" color="ion-color-dark">Código Postal</ion-label>
       <ion-input type="text" formControlName="codPostal" [readonly]="true"></ion-input>
     </ion-item>
@@ -54,13 +50,19 @@
         <ion-input type="text" formControlName="especialidad" [readonly]="true"></ion-input>
     </ion-item>
     <ion-item>
+      <ion-radio-group position="floating" color="ion-color-dark">Especialidades</ion-radio-group>
+      <ion-input type="text" formControlName="especialidades" [readonly]="true"></ion-input>
+    </ion-item>
+    <ion-item>
       <ion-label position="floating" color="primary">Correo Electronico</ion-label>
       <ion-input type="text" formControlName="email" [readonly]="true"></ion-input>
     </ion-item>
    <!--
     <ion-button class="submit-button" expand="block" type="submit" [disabled]="!validations_form.valid">Save</ion-button>-->
   </form>
-  <!--
-  <ion-button class="delete-button" expand="block" color="danger" (click)="delete()">Borrar</ion-button>-->
+
+<!--
+  <ion-button class="delete-button" expand="block" color="danger" (click)="delete()">Borrar</ion-button>
+-->
 
 </ion-content>

@@ -41,8 +41,12 @@ export class RegisempresaPage implements OnInit {
       {type: 'minlength', message: 'Numeor de Colegiado .'}
     ],
     'telefono': [
-      {type: 'required', message: 'Numero de Telefono Requeridoa.'},
+      {type: 'required', message: 'Numero de Telefono Requerido.'},
       {type: 'minlength', message: 'Numero de Telefono .'}
+    ],
+    'plan': [
+      {type: 'required', message: 'Plan Requerido.'},
+      {type: 'minlength', message: 'Plan Requerido .'}
     ],
   };
 
@@ -85,7 +89,8 @@ export class RegisempresaPage implements OnInit {
         Validators.required
       ])),
       plan: new FormControl('', Validators.compose([
-        Validators.call(0,1),
+        Validators.minLength(9),
+        Validators.required
       ])),
     });
   }

@@ -38,12 +38,14 @@ export class NewEmpresaPage implements OnInit {
       description: new FormControl('', Validators.required),
       direccion: new FormControl('', Validators.required),
       telefono: new FormControl('', Validators.required),
+      campañas: new FormControl('', ),
       cif: new FormControl('', Validators.required),
+      horario: new FormControl('', Validators.required),
       codPostal: new FormControl('', Validators.required),
-      evento: new FormControl(''),
       especialidad: new FormControl('', Validators.required),
+      especialidades: new FormControl('', Validators.required),
       email: new FormControl('', Validators.required),
-      plan: new FormControl('', )
+      plan: new FormControl('',),
     });
   }
 
@@ -53,10 +55,12 @@ export class NewEmpresaPage implements OnInit {
       description: value.description,
       direccion: value.direccion,
       telefono: value.telefono,
+      campañas: value.campañas,
+      horario: value.horario,
       cif: value.cif,
       codPostal: value.codPostal,
-      evento: value.evento,
       especialidad: value.especialidad,
+      especialidades: value.especialidades,
       email: value.email,
       plan: value.plan,
       image: this.image

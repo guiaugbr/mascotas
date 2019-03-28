@@ -56,6 +56,11 @@ export class AppComponent {
       title: 'Campañas',
       url: '/list-users/otros',
       icon: 'paw'
+    },
+    {
+      title: 'Pagina Principal',
+      url: '/home-app',
+      icon: 'paw'
     }
   ];
 
