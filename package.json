@@ -1,7 +1,7 @@
 {
     "name": "mascotas",
     "version": "1.0.0",
-    "author": "guiaug",
+    "author": "emmanuel",
     "scripts": {
         "ng": "ng",
         "start": "ng serve",

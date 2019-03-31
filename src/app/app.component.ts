@@ -7,14 +7,16 @@ import {StatusBar} from '@ionic-native/status-bar/ngx';
 import {AngularFireAuth} from '@angular/fire/auth';
 import {auth} from 'firebase/app';
 import { AuthService } from '../app/services/auth.service';
-
 import {Router} from '@angular/router';
+import {timer} from 'rxjs';
 
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html'
 })
 export class AppComponent {
+
+showSplash = true;
 
   public appPages = [
     {
@@ -94,7 +96,7 @@ export class AppComponent {
       }, err => {
         this.router.navigate(['/home-app']);
       }, () => {
-        this.splashScreen.hide();
+        this.splashScreen.show();
       });
       this.statusBar.styleDefault();
     });

@@ -4,7 +4,7 @@ import { LoadingController } from '@ionic/angular';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 
-declare var google;
+//declare var google;
 
 @Component({
   selector: 'list',
@@ -32,7 +32,7 @@ export class ListPage implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.loadMap();
+   // this.loadMap();
     if (this.route && this.route.data) {
       this.getData();
     }
@@ -40,7 +40,8 @@ export class ListPage implements OnInit {
 
   async getData() {
     const loading = await this.loadingCtrl.create({
-      message: 'Espere un momento...'
+      message: 'Espere un momento...',
+      duration: 2000
     });
     this.presentLoading(loading);
 
@@ -65,6 +66,8 @@ export class ListPage implements OnInit {
     });
   }
 
+  /*
+
   async loadMap() {
     const loading = await this.loadingCtrl.create();
     loading.present();
@@ -74,6 +77,7 @@ export class ListPage implements OnInit {
       center: myLatLng,
       zoom: 12
     });
+
     google.maps.event
       .addListenerOnce(this.mapRef, 'idle', () => {
         loading.dismiss();
@@ -95,5 +99,5 @@ export class ListPage implements OnInit {
       lat: rta.coords.latitude,
       lng: rta.coords.longitude
     };
-  }
+  }*/
 }

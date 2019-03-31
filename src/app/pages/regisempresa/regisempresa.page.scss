@@ -54,3 +54,13 @@ div.scrollmenu a img{
 div.scrollmenu a:hover {
   background-color: #777;
 }
+
+.splash{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center
+}

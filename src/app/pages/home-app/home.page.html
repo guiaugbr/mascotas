@@ -21,16 +21,17 @@
 
 
   <h5 text-center>Elije tu centro y pide cita</h5>
+  <div>
   <ion-grid>
-    <ion-row>
-      <ion-col class="columna" size="6">
+    <ion-row text-center>
+      <ion-col class="columna" size="6" >
           <img class="card-view1" src="../../../assets/cards/peluquerias.png" alt="" [routerLink]="['/list-users', 'peluqueria']">
       </ion-col>
       <ion-col size="6">
         <img class="card-view" src="../../../assets/cards/veterinaria.png" alt="" [routerLink]="['/list-users', 'veterinaria']">
 
       </ion-col>
-      <ion-col class="columna1" size="6">
+      <ion-col class="columna1" size="6" >
         <img class="card-view1" src="../../../assets/cards/tiendas.png" alt="" [routerLink]="['/list-users', 'tienda']">
 
       </ion-col>
@@ -38,7 +39,7 @@
         <img class="card-view" src="../../../assets/cards/adiestradores.png" alt="" [routerLink]="['/list-users', 'adiestramiento']">
 
       </ion-col>
-      <ion-col size="6">
+      <ion-col size="6" >
         <img class="card-view1" src="../../../assets/cards/residencias.png" alt="" [routerLink]="['/list-users', 'recidencia']">
 
       </ion-col>
@@ -46,13 +47,13 @@
         <img class="card-view" src="../../../assets/cards/adoptame.png" alt="" [routerLink]="['/list-users', 'adopcion']">
 
       </ion-col>
-      <ion-col size="6">
+      <ion-col size="12" text-center>
         <img class="card-view-campañas" src="../../../assets/cards/campañas.png" alt="" [routerLink]="['/list-users', 'campañas']">
 
       </ion-col>
     </ion-row>
   </ion-grid>
-
+</div>
   <div text-center="">
     <p class="text-fin-grid">Regístrate y recibe cupones y Ofertas.</p>
   </div>
