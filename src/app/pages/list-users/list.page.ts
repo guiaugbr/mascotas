@@ -3,8 +3,16 @@ import { AuthService } from '../../services/auth.service';
 import { LoadingController } from '@ionic/angular';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
+import {
+  GoogleMaps,
+  GoogleMap,
+  GoogleMapsEvent,
+  Marker,
+  GoogleMapsAnimation,
+  MyLocation
+} from '@ionic-native/google-maps';
 
-//declare var google;
+declare var google;
 
 @Component({
   selector: 'list',
@@ -12,7 +20,8 @@ import { Geolocation } from '@ionic-native/geolocation/ngx';
   styleUrls: ['./list.page.scss'],
 })
 export class ListPage implements OnInit {
-
+  mapReady: boolean = false;
+  map: GoogleMap;
   mapRef = null;
 
   items: Array<any>;
@@ -32,7 +41,7 @@ export class ListPage implements OnInit {
   ) { }
 
   ngOnInit() {
-   // this.loadMap();
+   this.loadMap();
     if (this.route && this.route.data) {
       this.getData();
     }
@@ -66,7 +75,7 @@ export class ListPage implements OnInit {
     });
   }
 
-  /*
+ 
 
   async loadMap() {
     const loading = await this.loadingCtrl.create();
@@ -99,5 +108,5 @@ export class ListPage implements OnInit {
       lat: rta.coords.latitude,
       lng: rta.coords.longitude
     };
-  }*/
+  }
 }

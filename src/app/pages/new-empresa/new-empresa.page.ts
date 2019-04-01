@@ -44,6 +44,7 @@ export class NewEmpresaPage implements OnInit {
       codPostal: new FormControl('', Validators.required),
       especialidad: new FormControl('', Validators.required),
       especialidades: new FormControl('', Validators.required),
+      animales: new FormControl('', Validators.required),
       email: new FormControl('', Validators.required),
       plan: new FormControl('',),
     });
@@ -61,6 +62,7 @@ export class NewEmpresaPage implements OnInit {
       codPostal: value.codPostal,
       especialidad: value.especialidad,
       especialidades: value.especialidades,
+      animales: value.animales,
       email: value.email,
       plan: value.plan,
       image: this.image

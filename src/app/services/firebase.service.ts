@@ -83,6 +83,7 @@ export class FirebaseService {
         codPostal: value.codPostal,
         especialidad: value.especialidad,
         especialidades: value.especialidades,
+        animales: value.animales,
         email: value.email,
         plan: value.plan,
         image: value.image

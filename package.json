@@ -17,9 +17,9 @@
         "@angular/platform-browser": "^7.2.2",
         "@angular/platform-browser-dynamic": "^7.2.2",
         "@angular/router": "^7.2.2",
-        "@ionic-native/core": "^5.0.0",
+        "@ionic-native/core": "^5.3.0",
         "@ionic-native/geolocation": "^5.3.0",
-        "@ionic-native/google-maps": "^5.0.0-beta.27",
+        "@ionic-native/google-maps": "^4.21.0",
         "@ionic-native/image-picker": "^5.0.0",
         "@ionic-native/ionic-webview": "^5.0.0",
         "@ionic-native/splash-screen": "5.0.0",
@@ -28,6 +28,7 @@
         "@ionic/pro": "2.0.3",
         "@types/mocha": "^5.2.6",
         "cordova-android": "8.0.0",
+        "cordova-browser": "6.0.0",
         "cordova-ios": "4.5.5",
         "cordova-plugin-device": "^2.0.2",
         "cordova-plugin-googlemaps": "2.5.3",
@@ -42,6 +43,8 @@
         "firebase": "^5.7.0",
         "ionic-cli": "0.0.0",
         "rxjs": "~6.3.3",
+        "rxjs-compat": "^6.4.0",
+        "serve": "10.1.2",
         "zone.js": "~0.8.29"
     },
     "devDependencies": {
@@ -75,7 +78,11 @@
             },
             "cordova-plugin-splashscreen": {},
             "cordova-plugin-statusbar": {},
-            "cordova-plugin-whitelist": {}
+            "cordova-plugin-whitelist": {},
+            "cordova-plugin-googlemaps": {
+                "API_KEY_FOR_ANDROID": "AIzaSyDjz5Qv0SjoBlXh6dRTU1EbNtAnVoN7Y9U",
+                "API_KEY_FOR_IOS": "AIzaSyDjz5Qv0SjoBlXh6dRTU1EbNtAnVoN7Y9U"
+            }
         },
         "platforms": [
             "ios"

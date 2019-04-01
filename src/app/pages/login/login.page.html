@@ -15,7 +15,7 @@
 <ion-content padding class="form-content">
 
   <div  text-center>
-    <h5 text-center>Login</h5>
+    <h4 text-center>Iniciar Sección</h4>
   </div>
 
   <form class="form" [formGroup]="validations_form" (ngSubmit)="tryLogin(validations_form.value)">
@@ -46,10 +46,10 @@
   </form>
   
   <p class="go-to-register">
-  No tienes una Cuenta? <a (click)="goRegisterPage()">Regístrate.</a>
+  No tienes una Cuenta? <ion-button size="small" (click)="goRegisterPage()">Regístrate.</ion-button>
 </p>
   <p class="go-to-register">
-    Eres una Empresa? <a (click)="goLoginEmpresa()">Login Empresa.</a>
+    Eres una Empresa? <ion-button size="small" (click)="goLoginEmpresa()">Login Empresa.</ion-button>
   </p>
 </ion-content>
 <ion-footer>

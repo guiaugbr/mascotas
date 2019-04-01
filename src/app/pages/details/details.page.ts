@@ -5,6 +5,8 @@ import { LoadingController, ToastController, AlertController } from '@ionic/angu
 import { ImagePicker } from '@ionic-native/image-picker/ngx';
 import { WebView } from '@ionic-native/ionic-webview/ngx';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
+import { UserInterface } from '../models/user';
 
 @Component({
   selector: 'app-details',
@@ -17,6 +19,8 @@ export class DetailsPage implements OnInit {
   image: any;
   item: any;
   load: boolean = false;
+  public isAdmin: any = null;
+  public userUid: string = null;
 
   constructor(
     private imagePicker: ImagePicker,
@@ -27,11 +31,14 @@ export class DetailsPage implements OnInit {
     private webview: WebView,
     private alertCtrl: AlertController,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private authService: AuthService
   ) { }
 
   ngOnInit() {
     this.getData();
+    this.getCurrentUser();
+
   }
 
   getData(){
@@ -50,10 +57,23 @@ export class DetailsPage implements OnInit {
       cif: new FormControl(this.item.cif, Validators.required),
       codPostal: new FormControl(this.item.codPostal, Validators.required),
       especialidad: new FormControl(this.item.especialidad, Validators.required),
+      animales: new FormControl(this.item.animales, Validators.required),
       especialidades: new FormControl(this.item.especialidades, Validators.required),
       email: new FormControl(this.item.email, Validators.required),
 
     });
+  }
+
+  getCurrentUser() {
+    this.authService.isAuth().subscribe(auth => {
+      if (auth) {
+        this.userUid = auth.uid;
+        this.authService.isUserAdmin(this.userUid).subscribe(userRole => {
+          this.isAdmin = Object.assign({}, userRole.roles).hasOwnProperty('admin');
+          // this.isAdmin = true;
+        })
+      }
+    })
   }
 
   onSubmit(value){
@@ -66,6 +86,7 @@ export class DetailsPage implements OnInit {
       codPostal: value.codPostal,
       especialidad: value.especialidad,
       especialidades: value.especialidades,
+      animales: value.animales,
       email: value.email,
       image: this.image
     }
@@ -157,3 +178,5 @@ export class DetailsPage implements OnInit {
   }
 
 }
+
+

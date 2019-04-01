@@ -44,10 +44,6 @@ export class RegisempresaPage implements OnInit {
       {type: 'required', message: 'Numero de Telefono Requerido.'},
       {type: 'minlength', message: 'Numero de Telefono .'}
     ],
-    'plan': [
-      {type: 'required', message: 'Plan Requerido.'},
-      {type: 'minlength', message: 'Plan Requerido .'}
-    ],
   };
 
   constructor(
@@ -88,15 +84,11 @@ export class RegisempresaPage implements OnInit {
         Validators.maxLength(9),
         Validators.required
       ])),
-      plan: new FormControl('', Validators.compose([
-        Validators.minLength(9),
-        Validators.required
-      ])),
     });
   }
 
   tryRegister(value) {
-    this.authService.doRegister(value)
+    this.authService.doRegisterUser(value)
       .then(res => {
         console.log(res);
         this.errorMessage = '';

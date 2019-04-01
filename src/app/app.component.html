@@ -18,8 +18,10 @@
           </ion-menu-toggle>
         </ion-list>
       </ion-content>
+      <ion-button *ngIf="isAdmin == true; else noAdmin" (click)="adminPage()">Administrador</ion-button>
+      <ion-button *ngIf="isEmpresa == true || isAdmin == true" (click)="nuevaEmpresa()">Crear una Empresa</ion-button>
       <ion-button  (click)="logout()">Cerrar Sesión</ion-button>
     </ion-menu>
     <ion-router-outlet main></ion-router-outlet>
   </ion-split-pane>
-</ion-app>
+</ion-app >

@@ -29,10 +29,68 @@
       <ion-label position="floating" color="ion-color-dark">Descripción</ion-label>
       <ion-input type="text" formControlName="description"></ion-input>
     </ion-item>
+<!--Ubicación-->
     <ion-item>
-      <ion-label position="floating" color="ion-color-dark">Dirección</ion-label>
-      <ion-input type="text" formControlName="direccion"></ion-input>
-    </ion-item>
+      <ion-radio-group formControlName="direccion">
+        <ion-label>Localidad</ion-label>
+        <ion-select  placeholder="Select One" cancelText="Cancelar" okText="Confirmar">
+          <ion-select-option value="Madrid">Madrid</ion-select-option>
+          <ion-select-option value='A Coruña' >A Coruña</ion-select-option>
+          <ion-select-option value='álava'>álava</ion-select-option>
+          <ion-select-option value='Albacete' >Albacete</ion-select-option>
+          <ion-select-option value='Alicante'>Alicante</ion-select-option>
+          <ion-select-option value='Almería' >Almería</ion-select-option>
+          <ion-select-option value='Asturias' >Asturias</ion-select-option>
+          <ion-select-option value='ávila' >Ávila</ion-select-option>
+          <ion-select-option value='Badajoz' >Badajoz</ion-select-option>
+          <ion-select-option value='Barcelona'>Barcelona</ion-select-option>
+          <ion-select-option value='Burgos' >Burgos</ion-select-option>
+          <ion-select-option value='Cáceres' >Cáceres</ion-select-option>
+          <ion-select-option value='Cádiz' >Cádiz</ion-select-option>
+          <ion-select-option value='Cantabria' >Cantabria</ion-select-option>
+          <ion-select-option value='Castellón' >Castellón</ion-select-option>
+          <ion-select-option value='Ceuta' >Ceuta</ion-select-option>
+          <ion-select-option value='Ciudad Real' >Ciudad Real</ion-select-option>
+          <ion-select-option value='Córdoba' >Córdoba</ion-select-option>
+          <ion-select-option value='Cuenca' >Cuenca</ion-select-option>
+          <ion-select-option value='Gerona' >Gerona</ion-select-option>
+          <ion-select-option value='Girona' >Girona</ion-select-option>
+          <ion-select-option value='Las Palmas' >Las Palmas</ion-select-option>
+          <ion-select-option value='Granada' >Granada</ion-select-option>
+          <ion-select-option value='Guadalajara' >Guadalajara</ion-select-option>
+          <ion-select-option value='Guipúzcoa' >Guipúzcoa</ion-select-option>
+          <ion-select-option value='Huelva' >Huelva</ion-select-option>
+          <ion-select-option value='Huesca' >Huesca</ion-select-option>
+          <ion-select-option value='Jaén' >Jaén</ion-select-option>
+          <ion-select-option value='La Rioja' >La Rioja</ion-select-option>
+          <ion-select-option value='León' >León</ion-select-option>
+          <ion-select-option value='Lleida' >Lleida</ion-select-option>
+          <ion-select-option value='Lugo' >Lugo</ion-select-option>
+          <ion-select-option value='Madrid' >Madrid</ion-select-option>
+          <ion-select-option value='Malaga' >Málaga</ion-select-option>
+          <ion-select-option value='Mallorca' >Mallorca</ion-select-option>
+          <ion-select-option value='Melilla' >Melilla</ion-select-option>
+          <ion-select-option value='Murcia' >Murcia</ion-select-option>
+          <ion-select-option value='Navarra' >Navarra</ion-select-option>
+          <ion-select-option value='Orense' >Orense</ion-select-option>
+          <ion-select-option value='Palencia' >Palencia</ion-select-option>
+          <ion-select-option value='Pontevedra'>Pontevedra</ion-select-option>
+          <ion-select-option value='Salamanca'>Salamanca</ion-select-option>
+          <ion-select-option value='Segovia' >Segovia</ion-select-option>
+          <ion-select-option value='Sevilla' >Sevilla</ion-select-option>
+          <ion-select-option value='Soria' >Soria</ion-select-option>
+          <ion-select-option value='Tarragona' >Tarragona</ion-select-option>
+          <ion-select-option value='Tenerife' >Tenerife</ion-select-option>
+          <ion-select-option value='Teruel' >Teruel</ion-select-option>
+          <ion-select-option value='Toledo' >Toledo</ion-select-option>
+          <ion-select-option value='Valencia' >Valencia</ion-select-option>
+          <ion-select-option value='Valladolid' >Valladolid</ion-select-option>
+          <ion-select-option value='Vizcaya' >Vizcaya</ion-select-option>
+          <ion-select-option value='Zamora' >Zamora</ion-select-option>
+          <ion-select-option value='Zaragoza'>Zaragoza</ion-select-option>
+        </ion-select>
+      </ion-radio-group>
+      </ion-item>
     <ion-item>
       <ion-label position="floating" color="ion-color-dark">Teléfono</ion-label>
       <ion-input placeholder=" 123654321" type="number" formControlName="telefono">+34-</ion-input>
@@ -48,6 +106,20 @@
     <ion-item>
       <ion-label position="floating" color="ion-color-dark">Campañas</ion-label>
       <ion-input placeholder="Obten 25% de Descuento al llamarnos" type="text" formControlName="campañas"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-radio-group formControlName="animales">
+            <ion-label>Tipo de Mascotas</ion-label>
+            <ion-select placeholder="Seleccionar Especialidad" multiple="true" cancelText="Cancelar" okText="Aceptar!">
+                <ion-select-option value="perros">Perros</ion-select-option>
+                <ion-select-option value='gatos' >Gatos</ion-select-option>
+                <ion-select-option value='aves' >Aves</ion-select-option>
+                <ion-select-option  value='hurones'>Hurones</ion-select-option>
+                <ion-select-option  value='peces'>Peces</ion-select-option>
+                <ion-select-option  value='caballos'>Caballos</ion-select-option>
+                <ion-select-option  value='Exoticos'>Exoticos</ion-select-option>
+            </ion-select>
+            </ion-radio-group>
     </ion-item>
     <ion-item>
       <ion-label position="floating" color="ion-color-dark">Codigo Postal</ion-label>
