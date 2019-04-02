@@ -45,7 +45,7 @@ export class DetailsPage implements OnInit {
     })
     this.validations_form = this.formBuilder.group({
       title: new FormControl(this.item.title, Validators.required),
-      description: new FormControl(this.item.description, Validators.required),
+      ubicacion: new FormControl(this.item.ubicacion, Validators.required),
       direccion: new FormControl(this.item.direccion, Validators.required),
       telefono: new FormControl(this.item.telefono, Validators.required),
       cif: new FormControl(this.item.cif, Validators.required),
@@ -61,7 +61,7 @@ export class DetailsPage implements OnInit {
   onSubmit(value){
     let data = {
       title: value.title,
-      description: value.description,
+      ubicacion: value.ubicacion,
       direccion: value.direccion,
       telefono: value.telefono,
       campañas: value.campañas,

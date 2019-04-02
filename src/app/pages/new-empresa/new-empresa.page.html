@@ -26,13 +26,13 @@
       <ion-input placeholder="Mascota Actual" type="text" formControlName="title"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label position="floating" color="ion-color-dark">Descripción</ion-label>
-      <ion-input type="text" formControlName="description"></ion-input>
+      <ion-label position="floating" color="ion-color-dark">Ubicación</ion-label>
+      <ion-input type="text" formControlName="ubicacion"></ion-input>
     </ion-item>
 <!--Ubicación-->
     <ion-item>
       <ion-radio-group formControlName="direccion">
-        <ion-label>Localidad</ion-label>
+        <ion-label>Ciudad</ion-label>
         <ion-select  placeholder="Select One" cancelText="Cancelar" okText="Confirmar">
           <ion-select-option value="Madrid">Madrid</ion-select-option>
           <ion-select-option value='A Coruña' >A Coruña</ion-select-option>
@@ -97,11 +97,34 @@
     </ion-item>
     <ion-item>
       <ion-label position="floating" color="ion-color-dark">CIF</ion-label>
-      <ion-input placeholder="Cif" type="datepicker" formControlName="cif"></ion-input>
+      <ion-input placeholder="CIF" type="datepicker" formControlName="cif"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label position="floating" color="ion-color-dark">Horario</ion-label>
-      <ion-input placeholder="Lunes-Viernes 08:00 - 18:00" type="datepicker" formControlName="horario"></ion-input>
+      <ion-radio-group formControlName="horario">
+        <ion-label>Horarios</ion-label>
+        <ion-list>
+          <ion-item>
+          <ion-label color="ion-color-dark">Lunes-viernes 08:00 - 18:00</ion-label>
+          <ion-radio slot="start" value="Lunes-viernes 08:00 - 18:00" checked></ion-radio>
+          </ion-item>
+          <ion-item>
+          <ion-label color="ion-color-dark">Lunes-viernes 09:00 - 20:00</ion-label>
+          <ion-radio slot="start" value="Lunes-viernes 08:00 - 18:00" checked></ion-radio>
+    </ion-item>
+          <ion-item>
+          <ion-label color="ion-color-dark">Lunes-viernes 24 Horas</ion-label>
+          <ion-radio slot="start" value="Lunes-viernes 24 Horas" checked></ion-radio>
+    </ion-item>
+          <ion-item>
+          <ion-label color="ion-color-dark">Lunes-Sabado 08:00 - 18:00</ion-label>
+          <ion-radio slot="start" value="Lunes-Sabado 08:00 - 18:00" checked></ion-radio>
+    </ion-item>
+          <ion-item>
+          <ion-label color="ion-color-dark">Lunes-Domingo 08:00 - 18:00</ion-label>
+          <ion-radio slot="start" value="Lunes-Domingo 08:00 - 18:00" checked></ion-radio>
+    </ion-item>
+        </ion-list>
+      </ion-radio-group>
     </ion-item>
     <ion-item>
       <ion-label position="floating" color="ion-color-dark">Campañas</ion-label>

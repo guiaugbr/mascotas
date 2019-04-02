@@ -85,6 +85,13 @@
           </div>
         </div>
         <div class="tab">
+          <input id="tab-cinco" type="checkbox" name="tabs2">
+          <label for="tab-cinco" color="ion-color-dark">Ubicación</label>
+          <div class="tab-content">
+            <ion-input type="text" formControlName="ubicacion" [readonly]="true"></ion-input>
+          </div>
+        </div>
+        <div class="tab">
           <input id="tab-three" type="checkbox" name="tabs2">
           <label for="tab-three" color="ion-color-dark">Horario</label>
           <div class="tab-content">
@@ -109,7 +116,7 @@
       <ion-button href="tel:+{{this.item.telefono}}">Contacto</ion-button>
     </div>
     <div text-center>
-      <ion-button href="https://maps.google.com/maps?q=+{{this.item.direccion}}">Dirección</ion-button>
+      <ion-button href="https://maps.google.com/maps?q=+{{this.item.ubicacion}}">Dirección</ion-button>
     </div>
 
   </form>

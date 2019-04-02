@@ -41,7 +41,7 @@ export class ListPage implements OnInit {
   ) { }
 
   ngOnInit() {
-   this.loadMap();
+    this.loadMap();
     if (this.route && this.route.data) {
       this.getData();
     }
@@ -68,14 +68,14 @@ export class ListPage implements OnInit {
 
   logout() {
     this.authService.doLogout()
-    .then(res => {
-      this.router.navigate(['/login']);
-    }, err => {
-      console.log(err);
-    });
+      .then(res => {
+        this.router.navigate(['/login']);
+      }, err => {
+        console.log(err);
+      });
   }
 
- 
+
 
   async loadMap() {
     const loading = await this.loadingCtrl.create();

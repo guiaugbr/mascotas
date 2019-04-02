@@ -35,7 +35,7 @@ export class NewEmpresaPage implements OnInit {
     this.image = "./assets/imgs/pets.jpg";
     this.validations_form = this.formBuilder.group({
       title: new FormControl('', Validators.required),
-      description: new FormControl('', Validators.required),
+      ubicacion: new FormControl('', Validators.required),
       direccion: new FormControl('', Validators.required),
       telefono: new FormControl('', Validators.required),
       campañas: new FormControl('', ),
@@ -53,7 +53,7 @@ export class NewEmpresaPage implements OnInit {
   onSubmit(value){
     let data = {
       title: value.title,
-      description: value.description,
+      ubicacion: value.ubicacion,
       direccion: value.direccion,
       telefono: value.telefono,
       campañas: value.campañas,

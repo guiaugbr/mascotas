@@ -74,7 +74,7 @@ export class FirebaseService {
     return new Promise<any>((resolve, reject) => {
       this.afs.collection('empresas').add({
         title: value.title,
-        description: value.description,
+        ubicacion: value.ubicacion,
         direccion: value.direccion,
         telefono: value.telefono,
         campañas: value.campañas,
