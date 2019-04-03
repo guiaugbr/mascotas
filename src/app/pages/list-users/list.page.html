@@ -24,6 +24,48 @@
   <br>
   <label>Buscar Por Ciudad: <input type="text" [(ngModel)]="searchText" placeholder="Madrid" /></label>
   <br>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6">
+        <!--Especialidad-->
+        <ion-list>
+            <ion-radio-group [(ngModel)]="searchEspecialidades" formControlName="especialidades">
+              <ion-label>Especialidades</ion-label>
+              <ion-select placeholder="Seleccionar Especialidad" multiple="true" cancelText="Cancelar" okText="Aceptar!">
+                <ion-select-option value="baño">Baño</ion-select-option>
+                <ion-select-option value="bañoyarreglo">Baño y Arreglo</ion-select-option>
+                <ion-select-option value="cortes">Cortes de Esposición</ion-select-option>
+                <ion-select-option value="stripping">Stripping</ion-select-option>
+                <ion-select-option value="desenredado">Desenredado</ion-select-option>
+                <ion-select-option value="razasppp">Razas PPP</ion-select-option>
+                <ion-select-option value="bañoycorte">Baños y Corte</ion-select-option>
+                <ion-select-option value="cortesderaza">Cortes de Raza</ion-select-option>
+                <ion-select-option value="autolavado">Autolavado</ion-select-option>
+                <ion-select-option value="corteuñas">Corte de Uñas</ion-select-option>
+              </ion-select>
+              </ion-radio-group>
+          </ion-list>
+
+      </ion-col>
+      <ion-col size="6">
+        <!--TIpo de Mascota-->
+        <ion-item>
+          <ion-radio-group [(ngModel)]="searchAnimales" formControlName="animales">
+              <ion-label>Tipo de Mascotas</ion-label>
+              <ion-select placeholder="Animales" multiple="true" cancelText="Cancelar" okText="Aceptar!">
+                  <ion-select-option value="perros">Perros</ion-select-option>
+                  <ion-select-option value='gatos' >Gatos</ion-select-option>
+                  <ion-select-option value='aves' >Aves</ion-select-option>
+                  <ion-select-option  value='hurones'>Hurones</ion-select-option>
+                  <ion-select-option  value='peces'>Peces</ion-select-option>
+                  <ion-select-option  value='caballos'>Caballos</ion-select-option>
+                  <ion-select-option  value='Exoticos'>Exoticos</ion-select-option>
+              </ion-select>
+              </ion-radio-group>
+      </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
   <div text-center class="barra">
     <h5 class="texto-h5">Empresas Seleccionadas</h5>
   </div>
@@ -32,8 +74,8 @@
       <!-- Slide -->
       <ion-slides [options]="sliderConfig">
         <div *ngFor="let item of items" ng-repeat="item in items| filter: busqueda" [routerLink]="['/details-users', item.payload.doc.id]">
-          <div *ngIf="item.payload.doc.data().direccion && item.payload.doc.data().direccion.length">
-            <div *ngIf="item.payload.doc.data().direccion.includes(searchText)">
+          <div *ngIf="item.payload.doc.data().direccion && item.payload.doc.data().direccion.length || item.payload.doc.data().especialidades && item.payload.doc.data().especialidades.length || item.payload.doc.data().animales && item.payload.doc.data().animales.length">
+            <div *ngIf="item.payload.doc.data().direccion.includes(searchText) || item.payload.doc.data().especialidades.includes(searchEspecialidades) || item.payload.doc.data().especialidades.includes(searchAnimales)">
             <ion-slide>
           <ion-grid>
             <ion-row>
