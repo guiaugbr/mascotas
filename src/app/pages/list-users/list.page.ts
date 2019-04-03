@@ -20,7 +20,7 @@ declare var google;
   styleUrls: ['./list.page.scss'],
 })
 export class ListPage implements OnInit {
-  mapReady: boolean = false;
+  mapReady = false;
   map: GoogleMap;
   mapRef = null;
 
@@ -31,6 +31,7 @@ export class ListPage implements OnInit {
     spaceBetween: 10,
     centeredSlides: true
   };
+  searchText: string = '';
 
   constructor(
     public loadingCtrl: LoadingController,
@@ -109,4 +110,14 @@ export class ListPage implements OnInit {
       lng: rta.coords.longitude
     };
   }
+
+  // filtro(searchText: string, ubicacion: string) {
+  //   console.log('pasa por aqui', searchText, ubicacion);
+  //   if (ubicacion && searchText && ubicacion.toLowerCase().contains(searchText.toLowerCase())) {
+  //     console.log('tiene');
+  //     //return ubicacion;
+  //   }
+  //   console.log('NO tiene');
+  //   //return '';
+  // }
 }

@@ -13,6 +13,24 @@
   </ion-toolbar>
 </ion-header>
 
+<!-- GUIAUG - INICIO --------------------------------------------->
+
+<label>Search: <input type="text" [(ngModel)]="searchText" /></label>
+<table id="searchTextResults">
+  <tr><th>Name</th><th>Phone</th></tr>
+  <tr *ngFor="let item of items" ng-repeat="item in items">
+    <div *ngIf="item.payload.doc.data().ubicacion && item.payload.doc.data().ubicacion.length">
+      <div *ngIf="item.payload.doc.data().ubicacion.includes(searchText)">
+        <td>{{item.payload.doc.data().ubicacion}}</td>
+        <td>{{item.payload.doc.data().especialidad}}</td>
+        <td>TEXTO: {{searchText}}</td>
+      </div>
+    </div>
+  </tr>
+</table>
+
+<!-- GUIAUG - FIN    --------------------------------------------->
+
 
 <ion-content *ngIf="items" class="list-mini-content" padding>
 <!--Filtro--------------------------------------------->
