@@ -33,6 +33,7 @@ export class ListPage implements OnInit {
   };
   searchText: string = '';
 
+
   constructor(
     public loadingCtrl: LoadingController,
     private authService: AuthService,
@@ -110,6 +111,7 @@ export class ListPage implements OnInit {
       lng: rta.coords.longitude
     };
   }
+
 
   // filtro(searchText: string, ubicacion: string) {
   //   console.log('pasa por aqui', searchText, ubicacion);
