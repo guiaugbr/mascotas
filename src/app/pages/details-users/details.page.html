@@ -67,7 +67,11 @@
           <input id="tab-one" type="checkbox" name="tabs2">
           <label for="tab-one" color="ion-color-dark">Especialidades</label>
           <div class="tab-content">
-            <img class="imagen-especialidades" src="../../../assets/imgs/especialidades.png">
+            <ion-list>
+              <ion-item *ngFor="let especialidad of this.item.especialidades">
+                {{especialidad}}
+              </ion-item>
+            </ion-list>
           </div>
         </div>
         <div class="tab">
