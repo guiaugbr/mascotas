@@ -32,6 +32,8 @@ export class ListPage implements OnInit {
     centeredSlides: true
   };
   searchText: string = '';
+  searchEspecialidades: string = '';
+  searchAnimales: string = '';
 
 
   constructor(

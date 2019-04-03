@@ -29,7 +29,7 @@
       <ion-col size="6">
         <!--Especialidad-->
         <ion-list>
-            <ion-radio-group [(ngModel)]="searchEspecialidades" formControlName="especialidades">
+            <ion-radio-group [(ngModel)]="searchEspecialidades">
               <ion-label>Especialidades</ion-label>
               <ion-select placeholder="Seleccionar Especialidad" multiple="true" cancelText="Cancelar" okText="Aceptar!">
                 <ion-select-option value="baño">Baño</ion-select-option>
@@ -50,7 +50,7 @@
       <ion-col size="6">
         <!--TIpo de Mascota-->
         <ion-item>
-          <ion-radio-group [(ngModel)]="searchAnimales" formControlName="animales">
+          <ion-radio-group [(ngModel)]="searchAnimales" >
               <ion-label>Tipo de Mascotas</ion-label>
               <ion-select placeholder="Animales" multiple="true" cancelText="Cancelar" okText="Aceptar!">
                   <ion-select-option value="perros">Perros</ion-select-option>
