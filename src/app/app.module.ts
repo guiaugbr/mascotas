@@ -22,6 +22,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from '../environments/environment';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Environment } from '@ionic-native/google-maps';
+import {ComponentsModule} from './components/components.module';
 // import { NewEmpresaModalPage } from './new-empresa-modal/new-empresa-modal.page';
 
 
@@ -39,6 +40,7 @@ import { Environment } from '@ionic-native/google-maps';
     AngularFirestoreModule, // imports firebase/firestore
     AngularFireAuthModule, // imports firebase/auth
     AngularFireStorageModule, // imports firebase/storage
+    ComponentsModule
   ],
   providers: [
     StatusBar,
